@@ -1,0 +1,55 @@
+<header class="site-header" role="banner">
+  <div class="container">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="/" class="brand-logo-text">
+          <span class="bloom-icon">{% render 'icon-flower' %}</span>
+          <span>WrapUpBlooms</span>
+        </a>
+      </div>
+
+      <nav class="header-nav" role="navigation">
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link active">Home</a></li>
+          <li><a href="/collections/all" class="nav-link">Personalized Gifts</a></li>
+          <li><a href="/collections/lipstick-keychains" class="nav-link">Lipstick Cases</a></li>
+          <li><a href="/collections/compact-mirrors" class="nav-link">Pocket Mirrors</a></li>
+          <li><a href="/collections/jewelry-boxes" class="nav-link">Keepsakes & Boxes</a></li>
+          <li><a href="/pages/our-story" class="nav-link">Our Story</a></li>
+          <li><a href="/pages/reviews" class="nav-link">Reviews</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="action-icon-btn" aria-label="Search" onclick="alert('Search WrapUpBlooms catalog');">
+          {% render 'icon-search' %}
+        </button>
+
+        <button class="action-icon-btn cart-trigger-btn" aria-label="View Cart">
+          {% render 'icon-cart' %}
+          <span class="cart-count-badge">2</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "shop_title",
+      "label": "Shop Title",
+      "default": "WrapUpBlooms"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Header Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

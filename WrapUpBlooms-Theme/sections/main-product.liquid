@@ -1,0 +1,82 @@
+<section class="main-product-section" style="padding: 5rem 0; background: var(--bg-cream);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+      <!-- Product Gallery -->
+      <div class="product-gallery-box" style="position: sticky; top: 100px;">
+        <div style="border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-hover); aspect-ratio: 1/1; background: #FFF;">
+          <img src="{{ product.featured_image | default: 'bespoke-lipstick-keychain.jpg' | asset_url }}" alt="{{ product.title | default: 'Personalized Keepsake' }}" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </div>
+
+      <!-- Product Form & Customization -->
+      <div class="product-info-box">
+        <div class="product-rating" style="margin-bottom: 8px;">
+          {% for i in (1..5) %}{% render 'icon-star' %}{% endfor %}
+          <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: 6px;">5.0 (Over 800+ Verified Etsy Reviews)</span>
+        </div>
+
+        <h1 style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--primary-deep); margin-bottom: 1rem; line-height: 1.2;">
+          {{ product.title | default: 'Personalized Leather Lipstick Case Keychain with Built-in Mirror' }}
+        </h1>
+
+        <div style="font-size: 1.6rem; font-weight: 700; color: var(--primary-dark-rose); margin-bottom: 1.5rem;">
+          {{ product.price | default: 2400 | money }}
+        </div>
+
+        <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">
+          {{ product.description | default: 'Our signature handcrafted vegan leather lipstick case features an interior touch-up mirror, reinforced keychain ring, and delicate custom laser engraving with her name and official birth month flower.' }}
+        </p>
+
+        <!-- Customization Fields for Shopify Orders -->
+        <form method="post" action="/cart/add" id="product-form" style="background: #FFF; padding: 2rem; border-radius: 24px; border: 1px solid var(--border-delicate); box-shadow: var(--shadow-soft);">
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: 1 }}">
+
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; color: var(--primary-deep);">
+              🌸 Recipient Name / Custom Script (Required)
+            </label>
+            <input type="text" name="properties[Engraved Name]" placeholder="e.g. Sophia" required class="input-engrave-text">
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; color: var(--primary-deep);">
+              🌿 Select Birth Month Flower
+            </label>
+            <select name="properties[Birth Flower]" class="input-engrave-text" style="cursor: pointer;">
+              <option value="January - Carnation">January - Carnation</option>
+              <option value="February - Violet">February - Violet</option>
+              <option value="March - Daffodil">March - Daffodil</option>
+              <option value="April - Daisy">April - Daisy</option>
+              <option value="May - Lily of the Valley">May - Lily of the Valley</option>
+              <option value="June - Rose" selected>June - Rose</option>
+              <option value="July - Water Lily">July - Water Lily</option>
+              <option value="August - Poppy">August - Poppy</option>
+              <option value="September - Morning Glory">September - Morning Glory</option>
+              <option value="October - Marigold">October - Marigold</option>
+              <option value="November - Peony">November - Peony</option>
+              <option value="December - Holly">December - Holly</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">
+            <span>Add Custom Keepsake to Cart</span>
+          </button>
+        </form>
+
+        <!-- Guarantee badges -->
+        <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem; font-size: 0.825rem; color: var(--text-muted);">
+          <span>📦 Fast 1-2 Day Dispatch</span>
+          <span>🎀 Free Luxury Gift Packaging</span>
+          <span>⭐️ 100% Satisfaction Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Product",
+  "settings": []
+}
+{% endschema %}

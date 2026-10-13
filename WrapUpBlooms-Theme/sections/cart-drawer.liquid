@@ -1,0 +1,77 @@
+<div id="cart-drawer-overlay" class="cart-drawer-overlay"></div>
+
+<div id="cart-drawer" class="cart-drawer" role="dialog" aria-modal="true" aria-label="Your Shopping Cart">
+  <div class="cart-drawer-header">
+    <h3 class="cart-drawer-title">Your Bloom Cart</h3>
+    <button id="cart-drawer-close" class="cart-close-btn" aria-label="Close Cart">
+      {% render 'icon-close' %}
+    </button>
+  </div>
+
+  <!-- Dynamic Free Shipping Progress Bar -->
+  <div class="shipping-meter">
+    <div id="shipping-meter-text" class="shipping-meter-text">
+      🌸 Add <strong>$7.50</strong> more to unlock FREE Luxury Gift Box Packaging!
+    </div>
+    <div class="shipping-bar-track">
+      <div id="shipping-meter-fill" class="shipping-bar-fill" style="width: 87%;"></div>
+    </div>
+  </div>
+
+  <div class="cart-drawer-body">
+    <div id="cart-drawer-items-list">
+      <!-- Injected dynamically via theme.js or liquid -->
+      <div class="cart-item">
+        <img src="{{ 'bespoke-lipstick-keychain.jpg' | asset_url }}" alt="Personalized Lipstick Case Keychain" class="cart-item-img" onerror="this.src='{{ 'product-lipstick-case.jpg' | asset_url }}'">
+        <div class="cart-item-details">
+          <h5 class="cart-item-title">Personalized Leather Lipstick Case Keychain</h5>
+          <span class="cart-item-customization">Sophia &bull; Rose (June) &bull; Blush Rose</span>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 6px;">
+            <span class="cart-item-price">$24.00</span>
+            <button class="cart-item-remove-btn" onclick="window.WrapUpBloomsTheme.removeItem(0)" style="background: none; border: none; font-size: 0.75rem; color: var(--primary-rose); cursor: pointer; text-decoration: underline;">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-item">
+        <img src="{{ 'bespoke-compact-mirror.jpg' | asset_url }}" alt="Custom LED Pocket Mirror" class="cart-item-img" onerror="this.src='{{ 'product-compact-mirror.jpg' | asset_url }}'">
+        <div class="cart-item-details">
+          <h5 class="cart-item-title">Custom Engraved LED Pocket Makeup Mirror</h5>
+          <span class="cart-item-customization">Emma &bull; Wildflower Wreath &bull; Rose Gold</span>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 6px;">
+            <span class="cart-item-price">$28.50</span>
+            <button class="cart-item-remove-btn" onclick="window.WrapUpBloomsTheme.removeItem(1)" style="background: none; border: none; font-size: 0.75rem; color: var(--primary-rose); cursor: pointer; text-decoration: underline;">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-drawer-footer">
+    <div class="cart-subtotal-row">
+      <span class="subtotal-label">Subtotal</span>
+      <span id="cart-drawer-subtotal" class="subtotal-val">$52.50</span>
+    </div>
+    <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">
+      Taxes and shipping calculated at checkout. Hand-tied ribbon packaging included.
+    </p>
+    <a href="/checkout" class="btn btn-primary" style="width: 100%;">
+      <span>Proceed to Secure Checkout</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cart Drawer",
+  "settings": [
+    {
+      "type": "number",
+      "id": "free_shipping_threshold",
+      "label": "Free Shipping Threshold ($)",
+      "default": 60
+    }
+  ]
+}
+{% endschema %}

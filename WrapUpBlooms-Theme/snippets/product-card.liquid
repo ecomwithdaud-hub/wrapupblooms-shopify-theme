@@ -1,0 +1,48 @@
+{% comment %}
+  WrapUpBlooms - Product Card Snippet
+{% endcomment %}
+
+<div class="product-card" data-product-id="{{ product.id | default: '1' }}" data-category="{{ product.type | downcase | default: 'gifts' }}">
+  <div class="product-card-media">
+    {% if product.compare_at_price > product.price %}
+      <span class="product-badge-sale">Sale</span>
+    {% endif %}
+    <span class="product-badge-custom">Custom Engraved</span>
+    
+    <a href="{{ product.url | default: '#' }}" aria-label="{{ product.title | default: 'Personalized Keepsake' }}">
+      {% if product.featured_image %}
+        <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy" width="600" height="600">
+      {% else %}
+        <img src="{{ 'bespoke-lipstick-keychain.jpg' | asset_url }}" alt="WrapUpBlooms Floral Gift" loading="lazy" width="600" height="600">
+      {% endif %}
+    </a>
+  </div>
+
+  <div class="product-rating">
+    {% for i in (1..5) %}
+      {% render 'icon-star' %}
+    {% endfor %}
+    <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0)</span>
+  </div>
+
+  <h3 class="product-title">
+    <a href="{{ product.url | default: '#' }}">{{ product.title | default: 'Personalized Leather Lipstick Case' }}</a>
+  </h3>
+  
+  <p class="product-tagline">
+    {{ product.metafields.descriptors.subtitle.value | default: 'Custom Engraved Name & Birth Flower' }}
+  </p>
+
+  <div class="product-price-row">
+    <div class="price-container">
+      <span class="current-price">{{ product.price | default: 2400 | money }}</span>
+      {% if product.compare_at_price > product.price %}
+        <span class="compare-price">{{ product.compare_at_price | money }}</span>
+      {% endif %}
+    </div>
+
+    <button class="btn-quick-add" aria-label="Personalize item">
+      🌸 Personalize
+    </button>
+  </div>
+</div>

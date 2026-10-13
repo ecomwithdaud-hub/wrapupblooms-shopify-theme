@@ -1,0 +1,188 @@
+<section class="featured-collection-section" id="featured-collection" style="padding: 6rem 0; position: relative;">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="section-subtitle-pill">Artisan Collection</span>
+      <h2 class="section-title">Best-Selling Personalized Keepsakes</h2>
+      <p>Every piece is individually engraved and lovingly hand-packaged with fresh botanical touches.</p>
+
+      <!-- Category Filter Tabs -->
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+        <button class="flower-chip collection-filter-tab active" data-category="all">🌸 All Keepsakes</button>
+        <button class="flower-chip collection-filter-tab" data-category="lipstick">💄 Lipstick Keychains</button>
+        <button class="flower-chip collection-filter-tab" data-category="mirrors">🪞 Pocket Mirrors</button>
+        <button class="flower-chip collection-filter-tab" data-category="boxes">💍 Jewelry & Boxes</button>
+      </div>
+    </div>
+
+    <div class="product-grid-target" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;">
+      
+      <!-- Product 1 -->
+      <div class="product-card" data-category="lipstick">
+        <div class="product-card-media">
+          <span class="product-badge-sale">Best Seller</span>
+          <span class="product-badge-custom">Engraved</span>
+          <a href="/products/personalized-leather-lipstick-case-keychain">
+            <img src="{{ 'bespoke-lipstick-keychain.jpg' | asset_url }}" alt="Personalized Leather Lipstick Case Keychain" width="600" height="600" onerror="this.src='{{ 'product-lipstick-case.jpg' | asset_url }}'">
+          </a>
+        </div>
+        <div class="product-rating">
+          {% for i in (1..5) %}{% render 'icon-star' %}{% endfor %}
+          <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0 &bull; 842 reviews)</span>
+        </div>
+        <h3 class="product-title">
+          <a href="/products/personalized-leather-lipstick-case-keychain">Personalized Leather Lipstick Case Keychain</a>
+        </h3>
+        <p class="product-tagline">Built-in interior mirror &bull; Custom birth flower</p>
+        <div class="product-price-row">
+          <div class="price-container">
+            <span class="current-price">$24.00</span>
+            <span class="compare-price">$30.00</span>
+          </div>
+          <button class="btn-quick-add">🌸 Personalize</button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card" data-category="mirrors">
+        <div class="product-card-media">
+          <span class="product-badge-sale">Popular</span>
+          <span class="product-badge-custom">Laser Etched</span>
+          <a href="/products/custom-engraved-led-pocket-makeup-mirror">
+            <img src="{{ 'bespoke-compact-mirror.jpg' | asset_url }}" alt="Custom Engraved LED Pocket Makeup Mirror" width="600" height="600" onerror="this.src='{{ 'product-compact-mirror.jpg' | asset_url }}'">
+          </a>
+        </div>
+        <div class="product-rating">
+          {% for i in (1..5) %}{% render 'icon-star' %}{% endfor %}
+          <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0 &bull; 619 reviews)</span>
+        </div>
+        <h3 class="product-title">
+          <a href="/products/custom-engraved-led-pocket-makeup-mirror">Custom Engraved LED Pocket Makeup Mirror</a>
+        </h3>
+        <p class="product-tagline">Halo LED illumination &bull; Dual magnification</p>
+        <div class="product-price-row">
+          <div class="price-container">
+            <span class="current-price">$28.50</span>
+            <span class="compare-price">$35.00</span>
+          </div>
+          <button class="btn-quick-add">🌸 Personalize</button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card" data-category="boxes">
+        <div class="product-card-media">
+          <span class="product-badge-custom">Velvet Interior</span>
+          <a href="/products/personalized-wildflower-travel-jewelry-box">
+            <img src="{{ 'product-jewelry-box.jpg' | asset_url }}" alt="Personalized Wildflower Velvet Travel Jewelry Box" width="600" height="600">
+          </a>
+        </div>
+        <div class="product-rating">
+          {% for i in (1..5) %}{% render 'icon-star' %}{% endfor %}
+          <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0 &bull; 412 reviews)</span>
+        </div>
+        <h3 class="product-title">
+          <a href="/products/personalized-wildflower-travel-jewelry-box">Personalized Wildflower Velvet Travel Jewelry Box</a>
+        </h3>
+        <p class="product-tagline">Gold zipper pull &bull; Custom monogram initial</p>
+        <div class="product-price-row">
+          <div class="price-container">
+            <span class="current-price">$32.00</span>
+            <span class="compare-price">$40.00</span>
+          </div>
+          <button class="btn-quick-add">🌸 Personalize</button>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card" data-category="all">
+        <div class="product-card-media">
+          <span class="product-badge-sale">Gift Favorite</span>
+          <span class="product-badge-custom">Handmade Wood</span>
+          <a href="/products/wooden-bear-family-keepsake-puzzle">
+            <img src="{{ 'product-bear-puzzle.jpg' | asset_url }}" alt="Handcrafted Wooden Bear Family Keepsake Puzzle" width="600" height="600">
+          </a>
+        </div>
+        <div class="product-rating">
+          {% for i in (1..5) %}{% render 'icon-star' %}{% endfor %}
+          <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0 &bull; 928 reviews)</span>
+        </div>
+        <h3 class="product-title">
+          <a href="/products/wooden-bear-family-keepsake-puzzle">Handcrafted Wooden Bear Family Keepsake Puzzle</a>
+        </h3>
+        <p class="product-tagline">Custom family names &bull; Solid beech & walnut</p>
+        <div class="product-price-row">
+          <div class="price-container">
+            <span class="current-price">$39.00</span>
+            <span class="compare-price">$48.00</span>
+          </div>
+          <button class="btn-quick-add">🌸 Personalize</button>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card" data-category="lipstick">
+        <div class="product-card-media">
+          <span class="product-badge-custom">Real Flora</span>
+          <a href="/products/dried-flower-resin-initial-keychain">
+            <img src="{{ 'product-floral-keychain.jpg' | asset_url }}" alt="Custom Dried Flower Resin Initial Keychain" width="600" height="600">
+          </a>
+        </div>
+        <div class="product-rating">
+          {% for i in (1..5) %}{% render 'icon-star' %}{% endfor %}
+          <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0 &bull; 310 reviews)</span>
+        </div>
+        <h3 class="product-title">
+          <a href="/products/dried-flower-resin-initial-keychain">Custom Dried Flower Resin Initial Keychain</a>
+        </h3>
+        <p class="product-tagline">Gold foil leaf flakes &bull; Real preserved petals</p>
+        <div class="product-price-row">
+          <div class="price-container">
+            <span class="current-price">$18.00</span>
+          </div>
+          <button class="btn-quick-add">🌸 Personalize</button>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card" data-category="boxes">
+        <div class="product-card-media">
+          <span class="product-badge-sale">Bridal Set</span>
+          <span class="product-badge-custom">Gift Box</span>
+          <a href="/products/bridesmaid-proposal-deluxe-gift-box">
+            <img src="{{ 'product-bridesmaid-box.jpg' | asset_url }}" alt="Bridesmaid Proposal Deluxe Floral Gift Box" width="600" height="600">
+          </a>
+        </div>
+        <div class="product-rating">
+          {% for i in (1..5) %}{% render 'icon-star' %}{% endfor %}
+          <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0 &bull; 540 reviews)</span>
+        </div>
+        <h3 class="product-title">
+          <a href="/products/bridesmaid-proposal-deluxe-gift-box">Bridesmaid Proposal Deluxe Floral Gift Box</a>
+        </h3>
+        <p class="product-tagline">Custom mirror + lipstick sleeve + silk scrunchie</p>
+        <div class="product-price-row">
+          <div class="price-container">
+            <span class="current-price">$45.00</span>
+            <span class="compare-price">$55.00</span>
+          </div>
+          <button class="btn-quick-add">🌸 Personalize</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Best-Selling Personalized Keepsakes"
+    }
+  ]
+}
+{% endschema %}

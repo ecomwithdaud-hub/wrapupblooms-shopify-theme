@@ -1,0 +1,5 @@
+# Temporary test files
+*.pyc
+__pycache__/
+etsy_raw.html
+ddg.html

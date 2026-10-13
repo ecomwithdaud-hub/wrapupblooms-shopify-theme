@@ -1,0 +1,75 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3 class="footer-brand-title">WrapUpBlooms</h3>
+        <p class="footer-desc">
+          Handcrafted personalized gifts for women, bridesmaids, and cherished family keepsakes. Made with love, laser precision, and botanical inspiration.
+        </p>
+        <div style="font-size: 0.85rem; color: #D6BDC4;">
+          ✨ Over 12,000+ 5-Star Reviews &bull; Free Gift Packaging Available
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Collections</h4>
+        <ul class="footer-links">
+          <li><a href="/collections/all">All Personalized Gifts</a></li>
+          <li><a href="/collections/lipstick-keychains">Lipstick Case Keychains</a></li>
+          <li><a href="/collections/compact-mirrors">LED Pocket Mirrors</a></li>
+          <li><a href="/collections/jewelry-boxes">Travel Jewelry Cases</a></li>
+          <li><a href="/collections/bridal-sets">Bridesmaid Gift Boxes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Customer Care</h4>
+        <ul class="footer-links">
+          <li><a href="/pages/our-story">About WrapUpBlooms</a></li>
+          <li><a href="/pages/shipping">Shipping & Production Times</a></li>
+          <li><a href="/pages/customization-guide">Birth Flower Chart</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+          <li><a href="/pages/contact">Contact Support</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Join the Bloom Club</h4>
+        <p style="font-size: 0.85rem; color: #D6BDC4; margin-bottom: 0.75rem;">
+          Enjoy 15% off your first personalized keepsake order, plus VIP access to new botanical designs.
+        </p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('🌸 Thank you for joining the WrapUpBlooms Club! Code BLOOM15 has been applied.');">
+          <div class="newsletter-input-group">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+            <button type="submit" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Join</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        &copy; {{ 'now' | date: '%Y' }} WrapUpBlooms. All rights reserved. Handcrafted with passion.
+      </div>
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <span>🔒 256-Bit SSL Encrypted Checkout</span>
+        <span>&bull;</span>
+        <span>🌸 Handcrafted in Small Batches</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "WrapUpBlooms. All rights reserved."
+    }
+  ]
+}
+{% endschema %}

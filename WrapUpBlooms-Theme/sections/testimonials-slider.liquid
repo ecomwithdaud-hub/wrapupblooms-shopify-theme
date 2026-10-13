@@ -1,0 +1,70 @@
+<section class="reviews-section" id="reviews" style="background: var(--bg-cream); padding: 6rem 0;">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="section-subtitle-pill">Verified Reviews</span>
+      <h2 class="section-title">Loved by Over 12,000+ Gift Givers</h2>
+      <p>Here is what our lovely customers say about their WrapUpBlooms custom keepsakes.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          &ldquo;I ordered 7 personalized leather lipstick keychains for my bridesmaids and they literally cried! The engraving of their birth flowers was so crisp, and the built-in mirror is super handy on nights out.&rdquo;
+        </p>
+        <div class="reviewer-meta">
+          <img src="{{ 'lookbook-1.jpg' | asset_url }}" alt="Emily R." class="reviewer-avatar">
+          <div>
+            <div class="reviewer-name">Emily R.</div>
+            <div class="verified-pill">🌸 Verified Buyer &bull; Bridal Party</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          &ldquo;The LED compact mirror is stunning! It feels heavy and luxurious, not cheap at all. The light is bright enough for a quick lipstick touch-up in the car or a dimly lit restaurant. Packaging was like receiving a boutique present.&rdquo;
+        </p>
+        <div class="reviewer-meta">
+          <img src="{{ 'lookbook-2.jpg' | asset_url }}" alt="Sophia M." class="reviewer-avatar">
+          <div>
+            <div class="reviewer-name">Sophia M.</div>
+            <div class="verified-pill">🌸 Verified Buyer &bull; Birthday Gift</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          &ldquo;Bought the bear family wooden puzzle for my mother's 60th birthday with all her grandchildren's names etched. She has it on her living room mantel and shows everyone who visits. Incredible craftsmanship!&rdquo;
+        </p>
+        <div class="reviewer-meta">
+          <img src="{{ 'lookbook-3.jpg' | asset_url }}" alt="Jessica T." class="reviewer-avatar">
+          <div>
+            <div class="reviewer-name">Jessica T.</div>
+            <div class="verified-pill">🌸 Verified Buyer &bull; Keepsake Decor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Loved by Over 12,000+ Gift Givers"
+    }
+  ]
+}
+{% endschema %}

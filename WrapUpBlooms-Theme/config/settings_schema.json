@@ -1,0 +1,71 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "WrapUpBlooms Boutique",
+    "theme_version": "1.0.0",
+    "theme_author": "Antigravity Creative",
+    "theme_documentation_url": "https://wrapupblooms.com",
+    "theme_support_url": "https://wrapupblooms.com"
+  },
+  {
+    "name": "Colors & Aesthetics",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_bg_cream",
+        "label": "Cream Silk Background",
+        "default": "#FFF9F5"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_rose",
+        "label": "Primary Dusty Rose",
+        "default": "#C47B89"
+      },
+      {
+        "type": "color",
+        "id": "color_accent_blush",
+        "label": "Accent Blossom Blush",
+        "default": "#FAD2E1"
+      },
+      {
+        "type": "color",
+        "id": "color_accent_gold",
+        "label": "Champagne Gold Highlight",
+        "default": "#D4AF37"
+      }
+    ]
+  },
+  {
+    "name": "Floating Blooms Animation",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_floating_petals",
+        "label": "Enable Floating Blossom Petals Canvas",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "petals_count",
+        "min": 15,
+        "max": 60,
+        "step": 5,
+        "unit": "pts",
+        "label": "Petals Density",
+        "default": 35
+      }
+    ]
+  },
+  {
+    "name": "Cart Drawer",
+    "settings": [
+      {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Free Gift Packaging Threshold ($)",
+        "default": 60
+      }
+    ]
+  }
+]

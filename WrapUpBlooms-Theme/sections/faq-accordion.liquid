@@ -1,0 +1,74 @@
+<section class="faq-section" style="padding: 6rem 0; background: var(--bg-cream); position: relative;">
+  <div class="container" style="max-width: 860px;">
+    <div class="section-header-center">
+      <span class="section-subtitle-pill">Help & Care</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p>Everything you need to know about our customization, materials, and gift delivery.</p>
+    </div>
+
+    <div class="faq-accordion-container" style="display: flex; flex-direction: column; gap: 1rem;">
+      <div class="faq-item" style="background: #FFF; border-radius: 18px; border: 1px solid var(--border-delicate); overflow: hidden; box-shadow: var(--shadow-soft);">
+        <button class="faq-question" style="width: 100%; text-align: left; padding: 1.25rem 1.75rem; background: none; border: none; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--primary-deep); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>How does the custom name and flower engraving process work?</span>
+          <span class="faq-icon" style="font-size: 1.2rem; color: var(--primary-rose);">+</span>
+        </button>
+        <div class="faq-answer" style="padding: 0 1.75rem 1.25rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; display: none;">
+          Each item is customized directly in our studio. You simply enter the recipient's name or initial and pick their birth month flower when adding to cart. Our laser engraver etches the design into the vegan leather or metal compact, and our artisans hand-clean and inspect every millimeter before packaging.
+        </div>
+      </div>
+
+      <div class="faq-item" style="background: #FFF; border-radius: 18px; border: 1px solid var(--border-delicate); overflow: hidden; box-shadow: var(--shadow-soft);">
+        <button class="faq-question" style="width: 100%; text-align: left; padding: 1.25rem 1.75rem; background: none; border: none; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--primary-deep); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>What is the turnaround time for custom orders?</span>
+          <span class="faq-icon" style="font-size: 1.2rem; color: var(--primary-rose);">+</span>
+        </button>
+        <div class="faq-answer" style="padding: 0 1.75rem 1.25rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; display: none;">
+          Unlike mass manufacturers, our standard production takes just 1-2 business days! Standard shipping delivers in 3-5 business days across the US and Canada. Express and rush delivery options are also available at checkout.
+        </div>
+      </div>
+
+      <div class="faq-item" style="background: #FFF; border-radius: 18px; border: 1px solid var(--border-delicate); overflow: hidden; box-shadow: var(--shadow-soft);">
+        <button class="faq-question" style="width: 100%; text-align: left; padding: 1.25rem 1.75rem; background: none; border: none; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--primary-deep); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>Can I place a bulk order for my bridal party or baby shower?</span>
+          <span class="faq-icon" style="font-size: 1.2rem; color: var(--primary-rose);">+</span>
+        </button>
+        <div class="faq-answer" style="padding: 0 1.75rem 1.25rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; display: none;">
+          Yes! Bridal parties are our specialty. Orders of 5+ pieces automatically qualify for tier discounts and include complimentary personalized gift bags and handwritten cards for each bridesmaid.
+        </div>
+      </div>
+
+      <div class="faq-item" style="background: #FFF; border-radius: 18px; border: 1px solid var(--border-delicate); overflow: hidden; box-shadow: var(--shadow-soft);">
+        <button class="faq-question" style="width: 100%; text-align: left; padding: 1.25rem 1.75rem; background: none; border: none; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--primary-deep); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>What materials do you use for the lipstick cases and mirrors?</span>
+          <span class="faq-icon" style="font-size: 1.2rem; color: var(--primary-rose);">+</span>
+        </button>
+        <div class="faq-answer" style="padding: 0 1.75rem 1.25rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; display: none;">
+          We use scratch-resistant, water-resistant premium vegan leather with heavy-duty reinforced gold alloy hardware. The LED compact mirrors feature distortion-free optical glass with dual magnification (1x & 2x) and USB-rechargeable warm halo lighting.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-item.active .faq-answer {
+    display: block !important;
+  }
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "FAQ Accordion",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    }
+  ]
+}
+{% endschema %}

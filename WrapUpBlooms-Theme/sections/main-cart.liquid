@@ -1,0 +1,36 @@
+<section class="main-cart-section" style="padding: 5rem 0; background: var(--bg-cream);">
+  <div class="container" style="max-width: 900px;">
+    <div class="section-header-center">
+      <span class="section-subtitle-pill">Your Bag</span>
+      <h1 class="section-title">Review Your Personalized Gifts</h1>
+    </div>
+
+    <div style="background: #FFF; border-radius: 28px; padding: 2.5rem; border: 1px solid var(--border-delicate); box-shadow: var(--shadow-soft);">
+      <div id="main-cart-content">
+        <div style="display: flex; gap: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-delicate); align-items: center;">
+          <img src="{{ 'bespoke-lipstick-keychain.jpg' | asset_url }}" alt="Lipstick case" style="width: 90px; height: 90px; border-radius: 16px; object-fit: cover;">
+          <div style="flex: 1;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--primary-deep); margin-bottom: 4px;">Personalized Leather Lipstick Case Keychain</h3>
+            <span style="font-size: 0.8rem; color: var(--primary-rose); background: var(--bg-petal); padding: 4px 10px; border-radius: 6px;">Sophia &bull; Rose (June)</span>
+          </div>
+          <div style="font-size: 1.2rem; font-weight: 700; color: var(--primary-dark-rose);">$24.00</div>
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--primary-deep);">Subtotal: $24.00</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Free gift packaging included &bull; Shipping calculated at checkout</div>
+          </div>
+          <a href="/checkout" class="btn btn-primary">Proceed to Checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Cart",
+  "settings": []
+}
+{% endschema %}

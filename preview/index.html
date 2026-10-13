@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WrapUpBlooms &bull; Romantic Floral Personalized Gifts & Keepsakes</title>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../WrapUpBlooms-Theme/assets/theme.css">
+  <style>
+    /* Relative asset paths for preview mode */
+    .hero-img-wrapper img, .preview-product-img, .product-card-media img, .cart-item-img {
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Blossom Petals Canvas -->
+  <canvas id="petals-canvas"></canvas>
+
+  <!-- Petals Motion Toggle Pill -->
+  <button id="toggle-petals" class="petals-toggle-btn" aria-label="Toggle Floating Blooms Animation">
+    <span class="sparkle-dot"></span> Floating Blooms: ON
+  </button>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Announcement">
+    <div class="container">
+      <div class="marquee-content">
+        <span class="badge-pill">Special Offer</span>
+        <span>🌸 <strong>Free Handcrafted Luxury Gift Box Packaging on orders over $50</strong></span>
+        <span style="opacity: 0.5;">•</span>
+        <span>✨ <strong>Use code BLOOM15 for 15% Off Your First Order</strong></span>
+        <span class="badge-pill" style="background: rgba(255,255,255,0.8);">5.0 ★ Etsy Top Rated</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frosted Glass Sticky Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <div class="header-brand">
+          <a href="#" class="brand-logo-text">
+            <span class="bloom-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V12m4.5 0a4.5 4.5 0 1 1-4.5 4.5M16.5 12H12m-4.5 0a4.5 4.5 0 1 0 4.5 4.5M7.5 12H12m0 4.5V12" />
+                <circle cx="12" cy="12" r="2.5" fill="currentColor" />
+              </svg>
+            </span>
+            <span>WrapUpBlooms</span>
+          </a>
+        </div>
+
+        <nav class="header-nav" role="navigation">
+          <ul class="nav-menu">
+            <li><a href="#" class="nav-link active">Home</a></li>
+            <li><a href="#featured-collection" class="nav-link">Personalized Gifts</a></li>
+            <li><a href="#water-showcase" class="nav-link">Lipstick Cases</a></li>
+            <li><a href="#featured-collection" class="nav-link">Pocket Mirrors</a></li>
+            <li><a href="#featured-collection" class="nav-link">Jewelry Boxes</a></li>
+            <li><a href="#story" class="nav-link">Our Story</a></li>
+            <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button class="action-icon-btn" aria-label="Search" onclick="alert('Search WrapUpBlooms catalog');">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+
+          <button class="action-icon-btn cart-trigger-btn" aria-label="View Cart" onclick="window.WrapUpBloomsTheme.openCart();">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-count-badge">2</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero-banner">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-pill-badge">
+            <span>🌸</span>
+            <span>Boutique Handcrafted Keepsakes</span>
+          </div>
+
+          <h1 class="hero-title">
+            Crafted with Blooms, <br>
+            <span class="highlight">Made for Her Heart.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Celebrate friendships, bridal parties, and cherished moments with custom-engraved leather lipstick case keychains, LED compact mirrors, and delicate wildflower keepsakes.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#featured-collection" class="btn btn-primary">
+              <span>Shop Custom Gifts</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#water-showcase" class="btn btn-secondary">
+              <span>Personalize Lipstick Case</span>
+            </a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <h4>12,400+</h4>
+              <p>Happy Gifting Moments</p>
+            </div>
+            <div class="stat-item">
+              <h4>5.0 ★</h4>
+              <p>Etsy Verified Rating</p>
+            </div>
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Handmade & Custom</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-visual-card">
+            <div class="hero-img-wrapper">
+              <img src="images/hero-bespoke-banner.jpg" alt="WrapUpBlooms Luxury Personalized Keepsakes" onerror="this.src='images/hero-banner.jpg'">
+            </div>
+
+            <div class="hero-floating-floater floating-badge">
+              <div class="floater-icon-circle">
+                🌸
+              </div>
+              <div class="floater-text">
+                <h5>Free Custom Engraving</h5>
+                <p>Add birth month flower & name</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Smooth Undulating Water Wave Divider -->
+    <div class="water-wave-divider water-wave-animated" style="margin-top: 4rem;">
+      <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
+        <path d="M0,32L48,42.7C96,53,192,75,288,80C384,85,480,75,576,58.7C672,43,768,21,864,21.3C960,21,1056,43,1152,53.3C1248,64,1344,64,1392,64L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="#FFF0F5"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Interactive Live Customizer Section (Water Showcase) -->
+  <section class="water-showcase-section" id="water-showcase">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-subtitle-pill">Interactive Live Customizer</span>
+        <h2 class="section-title">Design Her Personalized Keepsake</h2>
+        <p>Watch your personalization come alive in real-time. Type a name and choose a birth month flower to engrave on our signature leather lipstick case keychain with built-in mirror.</p>
+      </div>
+
+      <div class="customizer-card">
+        <!-- Live Preview Area -->
+        <div class="customizer-preview-box">
+          <img src="images/bespoke-lipstick-keychain.jpg" alt="Custom Lipstick Case" class="preview-product-img" onerror="this.src='images/product-lipstick-case.jpg'">
+          
+          <div class="live-engrave-overlay floating-badge">
+            <div class="live-engrave-name" id="live-engrave-name-display">Sophia</div>
+            <div class="live-engrave-flower" id="live-engrave-flower-display">Rose • June Bloom</div>
+          </div>
+        </div>
+
+        <!-- Live Controls -->
+        <div class="customizer-controls">
+          <div class="control-group">
+            <label class="control-label" for="customizer-name-input">
+              1. Enter Name / Custom Text (Max 15 Characters)
+            </label>
+            <input 
+              type="text" 
+              id="customizer-name-input" 
+              class="input-engrave-text" 
+              placeholder="e.g. Sophia, Bridesmaid, Mama" 
+              maxlength="15" 
+              value="Sophia"
+            >
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">
+              2. Choose Birth Month Flower
+            </label>
+            <div class="flower-chips-grid">
+              <button type="button" class="flower-chip" data-flower="Carnation" data-month="Jan">🌸 Jan (Carnation)</button>
+              <button type="button" class="flower-chip" data-flower="Violet" data-month="Feb">💜 Feb (Violet)</button>
+              <button type="button" class="flower-chip" data-flower="Daffodil" data-month="Mar">🌼 Mar (Daffodil)</button>
+              <button type="button" class="flower-chip" data-flower="Daisy" data-month="Apr">🤍 Apr (Daisy)</button>
+              <button type="button" class="flower-chip" data-flower="Lily" data-month="May">🌿 May (Lily)</button>
+              <button type="button" class="flower-chip active" data-flower="Rose" data-month="Jun">🌹 Jun (Rose)</button>
+              <button type="button" class="flower-chip" data-flower="Water Lily" data-month="Jul">🪷 Jul (Water Lily)</button>
+              <button type="button" class="flower-chip" data-flower="Poppy" data-month="Aug">🌺 Aug (Poppy)</button>
+              <button type="button" class="flower-chip" data-flower="Morning Glory" data-month="Sep">🌸 Sep (Glory)</button>
+              <button type="button" class="flower-chip" data-flower="Marigold" data-month="Oct">🌻 Oct (Marigold)</button>
+              <button type="button" class="flower-chip" data-flower="Peony" data-month="Nov">🏵️ Nov (Peony)</button>
+              <button type="button" class="flower-chip" data-flower="Holly" data-month="Dec">❄️ Dec (Holly)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">
+              3. Select Vegan Leather Shade
+            </label>
+            <div style="display: flex; gap: 12px;">
+              <label style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; cursor: pointer;">
+                <input type="radio" name="leather-color" checked style="accent-color: var(--primary-rose);">
+                Blush Rose
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; cursor: pointer;">
+                <input type="radio" name="leather-color" style="accent-color: var(--primary-rose);">
+                Cream Latte
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; cursor: pointer;">
+                <input type="radio" name="leather-color" style="accent-color: var(--primary-rose);">
+                Sage Mist
+              </label>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <button type="button" id="customizer-add-btn" class="btn btn-primary" style="width: 100%;">
+              <span>Add Custom Engraving to Cart &mdash; $24.00</span>
+            </button>
+            <p style="font-size: 0.78rem; text-align: center; margin-top: 8px; color: var(--text-muted);">
+              ✨ Hand-inspected before packaging &bull; Ships in 1-2 business days
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inverted Wave Divider -->
+    <div class="water-wave-divider water-wave-animated inverted" style="margin-top: 4rem;">
+      <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
+        <path d="M0,32L48,42.7C96,53,192,75,288,80C384,85,480,75,576,58.7C672,43,768,21,864,21.3C960,21,1056,43,1152,53.3C1248,64,1344,64,1392,64L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="#FFF0F5"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Featured Collection Section -->
+  <section class="featured-collection-section" id="featured-collection" style="padding: 6rem 0; position: relative;">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-subtitle-pill">Artisan Collection</span>
+        <h2 class="section-title">Best-Selling Personalized Keepsakes</h2>
+        <p>Every piece is individually engraved and lovingly hand-packaged with fresh botanical touches.</p>
+
+        <!-- Category Filter Tabs -->
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+          <button class="flower-chip collection-filter-tab active" data-category="all">🌸 All Keepsakes</button>
+          <button class="flower-chip collection-filter-tab" data-category="lipstick">💄 Lipstick Keychains</button>
+          <button class="flower-chip collection-filter-tab" data-category="mirrors">🪞 Pocket Mirrors</button>
+          <button class="flower-chip collection-filter-tab" data-category="boxes">💍 Jewelry & Boxes</button>
+        </div>
+      </div>
+
+      <div class="product-grid-target" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;">
+        
+        <!-- Product 1 -->
+        <div class="product-card" data-category="lipstick">
+          <div class="product-card-media">
+            <span class="product-badge-sale">Best Seller</span>
+            <span class="product-badge-custom">Engraved</span>
+            <a href="#water-showcase">
+              <img src="images/bespoke-lipstick-keychain.jpg" alt="Personalized Leather Lipstick Case Keychain" onerror="this.src='images/product-lipstick-case.jpg'">
+            </a>
+          </div>
+          <div class="product-rating">
+            ★★★★★
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0 &bull; 842 reviews)</span>
+          </div>
+          <h3 class="product-title">
+            <a href="#water-showcase">Personalized Leather Lipstick Case Keychain</a>
+          </h3>
+          <p class="product-tagline">Built-in interior mirror &bull; Custom birth flower</p>
+          <div class="product-price-row">
+            <div class="price-container">
+              <span class="current-price">$24.00</span>
+              <span class="compare-price">$30.00</span>
+            </div>
+            <button class="btn-quick-add">🌸 Personalize</button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-category="mirrors">
+          <div class="product-card-media">
+            <span class="product-badge-sale">Popular</span>
+            <span class="product-badge-custom">Laser Etched</span>
+            <a href="#water-showcase">
+              <img src="images/bespoke-compact-mirror.jpg" alt="Custom Engraved LED Pocket Makeup Mirror" onerror="this.src='images/product-compact-mirror.jpg'">
+            </a>
+          </div>
+          <div class="product-rating">
+            ★★★★★
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0 &bull; 619 reviews)</span>
+          </div>
+          <h3 class="product-title">
+            <a href="#water-showcase">Custom Engraved LED Pocket Makeup Mirror</a>
+          </h3>
+          <p class="product-tagline">Halo LED illumination &bull; Dual magnification</p>
+          <div class="product-price-row">
+            <div class="price-container">
+              <span class="current-price">$28.50</span>
+              <span class="compare-price">$35.00</span>
+            </div>
+            <button class="btn-quick-add">🌸 Personalize</button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-category="boxes">
+          <div class="product-card-media">
+            <span class="product-badge-custom">Velvet Interior</span>
+            <a href="#">
+              <img src="images/product-jewelry-box.jpg" alt="Personalized Wildflower Velvet Travel Jewelry Box">
+            </a>
+          </div>
+          <div class="product-rating">
+            ★★★★★
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0 &bull; 412 reviews)</span>
+          </div>
+          <h3 class="product-title">
+            <a href="#">Personalized Wildflower Velvet Travel Jewelry Box</a>
+          </h3>
+          <p class="product-tagline">Gold zipper pull &bull; Custom monogram initial</p>
+          <div class="product-price-row">
+            <div class="price-container">
+              <span class="current-price">$32.00</span>
+              <span class="compare-price">$40.00</span>
+            </div>
+            <button class="btn-quick-add">🌸 Personalize</button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-category="all">
+          <div class="product-card-media">
+            <span class="product-badge-sale">Gift Favorite</span>
+            <span class="product-badge-custom">Handmade Wood</span>
+            <a href="#">
+              <img src="images/product-bear-puzzle.jpg" alt="Handcrafted Wooden Bear Family Keepsake Puzzle">
+            </a>
+          </div>
+          <div class="product-rating">
+            ★★★★★
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0 &bull; 928 reviews)</span>
+          </div>
+          <h3 class="product-title">
+            <a href="#">Handcrafted Wooden Bear Family Keepsake Puzzle</a>
+          </h3>
+          <p class="product-tagline">Custom family names &bull; Solid beech & walnut</p>
+          <div class="product-price-row">
+            <div class="price-container">
+              <span class="current-price">$39.00</span>
+              <span class="compare-price">$48.00</span>
+            </div>
+            <button class="btn-quick-add">🌸 Personalize</button>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card" data-category="lipstick">
+          <div class="product-card-media">
+            <span class="product-badge-custom">Real Flora</span>
+            <a href="#">
+              <img src="images/product-floral-keychain.jpg" alt="Custom Dried Flower Resin Initial Keychain">
+            </a>
+          </div>
+          <div class="product-rating">
+            ★★★★★
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0 &bull; 310 reviews)</span>
+          </div>
+          <h3 class="product-title">
+            <a href="#">Custom Dried Flower Resin Initial Keychain</a>
+          </h3>
+          <p class="product-tagline">Gold foil leaf flakes &bull; Real preserved petals</p>
+          <div class="product-price-row">
+            <div class="price-container">
+              <span class="current-price">$18.00</span>
+            </div>
+            <button class="btn-quick-add">🌸 Personalize</button>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card" data-category="boxes">
+          <div class="product-card-media">
+            <span class="product-badge-sale">Bridal Set</span>
+            <span class="product-badge-custom">Gift Box</span>
+            <a href="#">
+              <img src="images/product-bridesmaid-box.jpg" alt="Bridesmaid Proposal Deluxe Floral Gift Box">
+            </a>
+          </div>
+          <div class="product-rating">
+            ★★★★★
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;">(5.0 &bull; 540 reviews)</span>
+          </div>
+          <h3 class="product-title">
+            <a href="#">Bridesmaid Proposal Deluxe Floral Gift Box</a>
+          </h3>
+          <p class="product-tagline">Custom mirror + lipstick sleeve + silk scrunchie</p>
+          <div class="product-price-row">
+            <div class="price-container">
+              <span class="current-price">$45.00</span>
+              <span class="compare-price">$55.00</span>
+            </div>
+            <button class="btn-quick-add">🌸 Personalize</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="story-section" id="story" style="padding: 6rem 0; background: #FFFFFF; position: relative;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div style="position: relative; border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-hover);">
+          <img src="images/story-artisan-craft.jpg" alt="Artisan Craftsmanship at WrapUpBlooms" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); padding: 16px 20px; border-radius: 16px; border: 1px solid var(--border-delicate);">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-deep);">Handcrafted in Small Batches</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Each piece laser-etched and packaged with hand-tied satin ribbons.</div>
+          </div>
+        </div>
+
+        <div>
+          <span class="section-subtitle-pill">Our Philosophy</span>
+          <h2 style="font-size: 2.85rem; font-family: var(--font-serif); color: var(--primary-deep); margin-bottom: 1.5rem; line-height: 1.2;">
+            Every Gift Tells a Story in Full Bloom.
+          </h2>
+          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            At <strong>WrapUpBlooms</strong>, we believe that gifts shouldn't just sit on a shelf &mdash; they should accompany you through everyday adventures. That is why our signature leather lipstick case keychains with mirrors, personalized pocket compacts, and bespoke jewelry boxes are engineered for both daily beauty touch-ups and heartfelt sentimental meaning.
+          </p>
+          <p style="font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem;">
+            From bridesmaid proposals to birthdays, new mothers, and self-love treats, our botanical birth-month engravings ensure no two pieces are ever identical.
+          </p>
+
+          <div style="display: flex; gap: 2rem; align-items: center; border-top: 1px solid var(--border-delicate); padding-top: 1.5rem;">
+            <div>
+              <div style="font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; color: var(--primary-rose);">WrapUpBlooms Studio</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Artisan Gifting Specialists</div>
+            </div>
+            <a href="#featured-collection" class="btn btn-secondary" style="margin-left: auto;">Explore Creations</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section -->
+  <section class="reviews-section" id="reviews" style="background: var(--bg-cream); padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-subtitle-pill">Verified Reviews</span>
+        <h2 class="section-title">Loved by Over 12,000+ Gift Givers</h2>
+        <p>Here is what our lovely customers say about their WrapUpBlooms custom keepsakes.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            &ldquo;I ordered 7 personalized leather lipstick keychains for my bridesmaids and they literally cried! The engraving of their birth flowers was so crisp, and the built-in mirror is super handy on nights out.&rdquo;
+          </p>
+          <div class="reviewer-meta">
+            <img src="images/lookbook-1.jpg" alt="Emily R." class="reviewer-avatar">
+            <div>
+              <div class="reviewer-name">Emily R.</div>
+              <div class="verified-pill">🌸 Verified Buyer &bull; Bridal Party</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            &ldquo;The LED compact mirror is stunning! It feels heavy and luxurious, not cheap at all. The light is bright enough for a quick lipstick touch-up in the car or a dimly lit restaurant. Packaging was like receiving a boutique present.&rdquo;
+          </p>
+          <div class="reviewer-meta">
+            <img src="images/lookbook-2.jpg" alt="Sophia M." class="reviewer-avatar">
+            <div>
+              <div class="reviewer-name">Sophia M.</div>
+              <div class="verified-pill">🌸 Verified Buyer &bull; Birthday Gift</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            &ldquo;Bought the bear family wooden puzzle for my mother's 60th birthday with all her grandchildren's names etched. She has it on her living room mantel and shows everyone who visits. Incredible craftsmanship!&rdquo;
+          </p>
+          <div class="reviewer-meta">
+            <img src="images/lookbook-3.jpg" alt="Jessica T." class="reviewer-avatar">
+            <div>
+              <div class="reviewer-name">Jessica T.</div>
+              <div class="verified-pill">🌸 Verified Buyer &bull; Keepsake Decor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lookbook Section -->
+  <section class="lookbook-section" style="padding: 5rem 0; background: #FFF; position: relative;">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-subtitle-pill">Social Gallery</span>
+        <h2 class="section-title">Follow the Blooms @WrapUpBlooms</h2>
+        <p>Tag us in your unboxing moments on Instagram & TikTok to be featured on our boutique gallery.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+        <div style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 1/1; box-shadow: var(--shadow-soft);">
+          <img src="images/lookbook-1.jpg" alt="WrapUpBlooms Social 1" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: rgba(196, 123, 137, 0.4); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease; color: #FFF; font-weight: 600;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+            🌸 #WrapUpBlooms
+          </div>
+        </div>
+
+        <div style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 1/1; box-shadow: var(--shadow-soft);">
+          <img src="images/lookbook-2.jpg" alt="WrapUpBlooms Social 2" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: rgba(196, 123, 137, 0.4); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease; color: #FFF; font-weight: 600;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+            ✨ #BridesmaidGifts
+          </div>
+        </div>
+
+        <div style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 1/1; box-shadow: var(--shadow-soft);">
+          <img src="images/lookbook-3.jpg" alt="WrapUpBlooms Social 3" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: rgba(196, 123, 137, 0.4); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease; color: #FFF; font-weight: 600;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+            💄 #LipstickKeychain
+          </div>
+        </div>
+
+        <div style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 1/1; box-shadow: var(--shadow-soft);">
+          <img src="images/lookbook-4.jpg" alt="WrapUpBlooms Social 4" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: rgba(196, 123, 137, 0.4); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease; color: #FFF; font-weight: 600;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+            🌿 #PersonalizedGifts
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" style="padding: 6rem 0; background: var(--bg-cream); position: relative;">
+    <div class="container" style="max-width: 860px;">
+      <div class="section-header-center">
+        <span class="section-subtitle-pill">Help & Care</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p>Everything you need to know about our customization, materials, and gift delivery.</p>
+      </div>
+
+      <div class="faq-accordion-container" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="faq-item" style="background: #FFF; border-radius: 18px; border: 1px solid var(--border-delicate); overflow: hidden; box-shadow: var(--shadow-soft);">
+          <button class="faq-question" style="width: 100%; text-align: left; padding: 1.25rem 1.75rem; background: none; border: none; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--primary-deep); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+            <span>How does the custom name and flower engraving process work?</span>
+            <span class="faq-icon" style="font-size: 1.2rem; color: var(--primary-rose);">+</span>
+          </button>
+          <div class="faq-answer" style="padding: 0 1.75rem 1.25rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; display: none;">
+            Each item is customized directly in our studio. You simply enter the recipient's name or initial and pick their birth month flower when adding to cart. Our laser engraver etches the design into the vegan leather or metal compact, and our artisans hand-clean and inspect every millimeter before packaging.
+          </div>
+        </div>
+
+        <div class="faq-item" style="background: #FFF; border-radius: 18px; border: 1px solid var(--border-delicate); overflow: hidden; box-shadow: var(--shadow-soft);">
+          <button class="faq-question" style="width: 100%; text-align: left; padding: 1.25rem 1.75rem; background: none; border: none; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--primary-deep); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+            <span>What is the turnaround time for custom orders?</span>
+            <span class="faq-icon" style="font-size: 1.2rem; color: var(--primary-rose);">+</span>
+          </button>
+          <div class="faq-answer" style="padding: 0 1.75rem 1.25rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; display: none;">
+            Unlike mass manufacturers, our standard production takes just 1-2 business days! Standard shipping delivers in 3-5 business days across the US and Canada. Express and rush delivery options are also available at checkout.
+          </div>
+        </div>
+
+        <div class="faq-item" style="background: #FFF; border-radius: 18px; border: 1px solid var(--border-delicate); overflow: hidden; box-shadow: var(--shadow-soft);">
+          <button class="faq-question" style="width: 100%; text-align: left; padding: 1.25rem 1.75rem; background: none; border: none; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--primary-deep); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+            <span>Can I place a bulk order for my bridal party or baby shower?</span>
+            <span class="faq-icon" style="font-size: 1.2rem; color: var(--primary-rose);">+</span>
+          </button>
+          <div class="faq-answer" style="padding: 0 1.75rem 1.25rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; display: none;">
+            Yes! Bridal parties are our specialty. Orders of 5+ pieces automatically qualify for tier discounts and include complimentary personalized gift bags and handwritten cards for each bridesmaid.
+          </div>
+        </div>
+
+        <div class="faq-item" style="background: #FFF; border-radius: 18px; border: 1px solid var(--border-delicate); overflow: hidden; box-shadow: var(--shadow-soft);">
+          <button class="faq-question" style="width: 100%; text-align: left; padding: 1.25rem 1.75rem; background: none; border: none; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--primary-deep); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+            <span>What materials do you use for the lipstick cases and mirrors?</span>
+            <span class="faq-icon" style="font-size: 1.2rem; color: var(--primary-rose);">+</span>
+          </button>
+          <div class="faq-answer" style="padding: 0 1.75rem 1.25rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; display: none;">
+            We use scratch-resistant, water-resistant premium vegan leather with heavy-duty reinforced gold alloy hardware. The LED compact mirrors feature distortion-free optical glass with dual magnification (1x & 2x) and USB-rechargeable warm halo lighting.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-out AJAX Cart Drawer -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay"></div>
+
+  <div id="cart-drawer" class="cart-drawer" role="dialog" aria-modal="true" aria-label="Your Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">Your Bloom Cart</h3>
+      <button id="cart-drawer-close" class="cart-close-btn" aria-label="Close Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <!-- Free Shipping Meter -->
+    <div class="shipping-meter">
+      <div id="shipping-meter-text" class="shipping-meter-text">
+        🌸 Add <strong>$7.50</strong> more to unlock FREE Luxury Gift Box Packaging!
+      </div>
+      <div class="shipping-bar-track">
+        <div id="shipping-meter-fill" class="shipping-bar-fill" style="width: 87%;"></div>
+      </div>
+    </div>
+
+    <div class="cart-drawer-body">
+      <div id="cart-drawer-items-list">
+        <!-- Injected via theme.js -->
+      </div>
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span class="subtotal-label">Subtotal</span>
+        <span id="cart-drawer-subtotal" class="subtotal-val">$52.50</span>
+      </div>
+      <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">
+        Taxes and shipping calculated at checkout. Hand-tied ribbon packaging included.
+      </p>
+      <button type="button" class="btn btn-primary" style="width: 100%;" onclick="alert('Proceeding to Shopify checkout with your personalized items!');">
+        <span>Proceed to Secure Checkout</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-brand-title">WrapUpBlooms</h3>
+          <p class="footer-desc">
+            Handcrafted personalized gifts for women, bridesmaids, and cherished family keepsakes. Made with love, laser precision, and botanical inspiration.
+          </p>
+          <div style="font-size: 0.85rem; color: #D6BDC4;">
+            ✨ Over 12,000+ 5-Star Reviews &bull; Free Gift Packaging Available
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="#featured-collection">All Personalized Gifts</a></li>
+            <li><a href="#water-showcase">Lipstick Case Keychains</a></li>
+            <li><a href="#featured-collection">LED Pocket Mirrors</a></li>
+            <li><a href="#featured-collection">Travel Jewelry Cases</a></li>
+            <li><a href="#featured-collection">Bridesmaid Gift Boxes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="#story">About WrapUpBlooms</a></li>
+            <li><a href="#faq">Shipping & Production Times</a></li>
+            <li><a href="#water-showcase">Birth Flower Chart</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Join the Bloom Club</h4>
+          <p style="font-size: 0.85rem; color: #D6BDC4; margin-bottom: 0.75rem;">
+            Enjoy 15% off your first personalized keepsake order, plus VIP access to new botanical designs.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('🌸 Thank you for joining the WrapUpBlooms Club! Code BLOOM15 has been applied.');">
+            <div class="newsletter-input-group">
+              <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+              <button type="submit" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Join</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 WrapUpBlooms. All rights reserved. Handcrafted with passion.
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <span>🔒 256-Bit SSL Encrypted Checkout</span>
+          <span>&bull;</span>
+          <span>🌸 Handcrafted in Small Batches</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../WrapUpBlooms-Theme/assets/floating-petals.js"></script>
+  <script src="../WrapUpBlooms-Theme/assets/water-ripple.js"></script>
+  <script src="../WrapUpBlooms-Theme/assets/theme.js"></script>
+</body>
+</html>

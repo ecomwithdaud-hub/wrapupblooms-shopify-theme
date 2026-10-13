@@ -1,0 +1,19 @@
+<section class="main-page-section" style="padding: 5rem 0; background: var(--bg-cream);">
+  <div class="container" style="max-width: 860px;">
+    <div class="section-header-center">
+      <span class="section-subtitle-pill">WrapUpBlooms</span>
+      <h1 class="section-title">{{ page.title }}</h1>
+    </div>
+
+    <div style="background: #FFF; border-radius: 28px; padding: 3rem; border: 1px solid var(--border-delicate); box-shadow: var(--shadow-soft); line-height: 1.8; color: var(--text-secondary);">
+      {{ page.content }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Page",
+  "settings": []
+}
+{% endschema %}

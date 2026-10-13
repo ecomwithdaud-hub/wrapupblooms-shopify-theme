@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "heading": "Crafted with Blooms, Made for Her Heart.",
+        "subheading": "Celebrate friendships, bridal parties, and cherished moments with custom-engraved leather lipstick case keychains, LED compact mirrors, and delicate wildflower keepsakes."
+      }
+    },
+    "water_showcase": {
+      "type": "product-water-showcase",
+      "settings": {
+        "title": "Design Her Personalized Keepsake"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Best-Selling Personalized Keepsakes"
+      }
+    },
+    "story": {
+      "type": "rich-text-story",
+      "settings": {
+        "heading": "Every Gift Tells a Story in Full Bloom."
+      }
+    },
+    "testimonials": {
+      "type": "testimonials-slider",
+      "settings": {
+        "title": "Loved by Over 12,000+ Gift Givers"
+      }
+    },
+    "lookbook": {
+      "type": "instagram-lookbook",
+      "settings": {
+        "title": "Follow the Blooms @WrapUpBlooms"
+      }
+    },
+    "faq": {
+      "type": "faq-accordion",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "water_showcase",
+    "featured_collection",
+    "story",
+    "testimonials",
+    "lookbook",
+    "faq"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_text": "Skip to content",
+      "close": "Close"
+    },
+    "share": {
+      "copy_to_clipboard": "Copy link"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Personalize & Add to Cart",
+      "sold_out": "Sold Out",
+      "unavailable": "Unavailable",
+      "vendor": "WrapUpBlooms",
+      "quantity": "Quantity"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your Bloom Cart",
+      "empty": "Your cart is currently empty",
+      "continue_shopping": "Start Shopping",
+      "subtotal": "Subtotal",
+      "checkout": "Proceed to Checkout"
+    }
+  }
+}

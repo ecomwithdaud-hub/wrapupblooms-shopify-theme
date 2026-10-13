@@ -25,4 +25,8 @@ for page in pages:
         f.write(preview_content)
     print(f"Synced preview/{page}")
 
+shutil.copy2("favicon.svg", "preview/favicon.svg")
+shutil.copy2("favicon.png", "preview/favicon.png")
+print("Synced preview favicons")
+
 print("All standalone pages synced successfully!")

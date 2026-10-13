@@ -553,8 +553,103 @@ img {
 /* Hero Section */
 .hero-section {
   position: relative;
-  padding: 6rem 0 7rem;
+  padding: 2.5rem 0 3rem;
   overflow: hidden;
+}
+
+/* Panoramic Masterpiece Hero Showcase */
+.hero-banner-showcase {
+  background: #FFFFFF;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1.5px solid var(--border-delicate);
+  box-shadow: 0 16px 40px rgba(196, 123, 137, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.hero-banner-showcase:hover {
+  box-shadow: 0 20px 48px rgba(196, 123, 137, 0.15);
+}
+
+.hero-artwork-frame {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+  background: #FBF6EF;
+  border-bottom: 1.5px solid rgba(196, 123, 137, 0.12);
+}
+
+.hero-artwork-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.hero-action-shelf {
+  padding: 2.25rem 2.5rem 2rem;
+  text-align: center;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 249, 245, 0.95) 100%);
+}
+
+.hero-shelf-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 820px;
+  margin: 0 auto 1.75rem;
+  line-height: 1.75;
+}
+
+.hero-shelf-cta-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-shelf-cta-group .btn {
+  padding: 14px 34px;
+}
+
+.hero-shelf-trust-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(196, 123, 137, 0.22);
+}
+
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border-delicate);
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  box-shadow: 0 2px 8px rgba(196, 123, 137, 0.06);
+  white-space: nowrap;
+}
+
+.trust-pill.highlight-gold {
+  border-color: rgba(212, 175, 55, 0.35);
+  background: #FFFAF0;
+}
+
+.trust-pill .trust-stars {
+  color: var(--accent-gold);
+  letter-spacing: 1px;
+}
+
+.trust-pill .trust-icon {
+  font-size: 1rem;
 }
 
 .hero-grid {

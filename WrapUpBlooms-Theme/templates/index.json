@@ -7,16 +7,24 @@
         "subheading": "Celebrate friendships, bridal parties, and cherished moments with custom-engraved leather lipstick case keychains, LED compact mirrors, and delicate wildflower keepsakes."
       }
     },
-    "water_showcase": {
-      "type": "product-water-showcase",
+    "who_we_are_offer": {
+      "type": "who-we-are-offer",
       "settings": {
-        "title": "Design Her Personalized Keepsake"
+        "subtitle": "Who We Are & What We Offer",
+        "title": "Handcrafted Keepsakes Crafted with Intention",
+        "description": "We combine delicate botanical illustrations with permanent precision laser etching to create meaningful accessories that accompany her daily journey."
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Best-Selling Personalized Keepsakes"
+        "title": "Our 4 Most-Loved Personalized Keepsakes"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials-slider",
+      "settings": {
+        "title": "What Our Clients Say"
       }
     },
     "story": {
@@ -24,33 +32,13 @@
       "settings": {
         "heading": "Every Gift Tells a Story in Full Bloom."
       }
-    },
-    "testimonials": {
-      "type": "testimonials-slider",
-      "settings": {
-        "title": "Loved by Over 12,000+ Gift Givers"
-      }
-    },
-    "lookbook": {
-      "type": "instagram-lookbook",
-      "settings": {
-        "title": "Follow the Blooms @WrapUpBlooms"
-      }
-    },
-    "faq": {
-      "type": "faq-accordion",
-      "settings": {
-        "title": "Frequently Asked Questions"
-      }
     }
   },
   "order": [
     "hero",
-    "water_showcase",
+    "who_we_are_offer",
     "featured_collection",
-    "story",
     "testimonials",
-    "lookbook",
-    "faq"
+    "story"
   ]
 }

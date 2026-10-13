@@ -1,0 +1,66 @@
+<section class="who-we-are-offer-section" style="padding: 5rem 0; background: #FFFFFF;">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="section-subtitle-pill">{{ section.settings.subtitle | default: 'Who We Are & What We Offer' }}</span>
+      <h2 class="section-title">{{ section.settings.title | default: 'Handcrafted Keepsakes Crafted with Intention' }}</h2>
+      <p>{{ section.settings.description | default: 'We combine delicate botanical illustrations with permanent precision laser etching to create meaningful accessories that accompany her daily journey.' }}</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem;">
+      <div style="background: var(--bg-cream); padding: 2rem; border-radius: 24px; border: 1px solid var(--border-delicate); text-align: center; box-shadow: var(--shadow-soft);">
+        <div style="font-size: 2.25rem; margin-bottom: 1rem;">🌿</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--primary-deep); margin-bottom: 8px;">12 Botanical Birth Flowers</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">Every piece can be engraved with official botanical birth flowers, from January Carnations to December Holly blooms.</p>
+      </div>
+
+      <div style="background: var(--bg-cream); padding: 2rem; border-radius: 24px; border: 1px solid var(--border-delicate); text-align: center; box-shadow: var(--shadow-soft);">
+        <div style="font-size: 2.25rem; margin-bottom: 1rem;">⚙️</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--primary-deep); margin-bottom: 8px;">US Laser Precision</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">Etched by our New Hampshire engraving partners with microscopic laser fidelity that never fades, chips, or rubs off.</p>
+      </div>
+
+      <div style="background: var(--bg-cream); padding: 2rem; border-radius: 24px; border: 1px solid var(--border-delicate); text-align: center; box-shadow: var(--shadow-soft);">
+        <div style="font-size: 2.25rem; margin-bottom: 1rem;">🎀</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--primary-deep); margin-bottom: 8px;">Complimentary Gift Boxing</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">Orders arrive presentation-ready in our signature blush and cream box, hand-tied with double-faced satin ribbons.</p>
+      </div>
+
+      <div style="background: var(--bg-cream); padding: 2rem; border-radius: 24px; border: 1px solid var(--border-delicate); text-align: center; box-shadow: var(--shadow-soft);">
+        <div style="font-size: 2.25rem; margin-bottom: 1rem;">✨</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--primary-deep); margin-bottom: 8px;">Cruelty-Free Vegan Leather</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">Scratch-resistant, water-resistant luxury vegan leather paired with reinforced gold-alloy snaps and clasps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Who We Are & What We Offer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle Pill",
+      "default": "Who We Are & What We Offer"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Handcrafted Keepsakes Crafted with Intention"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "We combine delicate botanical illustrations with permanent precision laser etching to create meaningful accessories that accompany her daily journey."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Who We Are & What We Offer"
+    }
+  ]
+}
+{% endschema %}

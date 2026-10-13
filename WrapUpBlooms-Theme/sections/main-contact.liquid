@@ -1,0 +1,141 @@
+<section class="page-contact-section" style="padding: 5rem 0; background: var(--bg-cream);">
+  <div class="container" style="max-width: 860px; text-align: center; margin-bottom: 4rem;">
+    <span class="section-subtitle-pill">Artisan Studio Concierge</span>
+    <h1 class="section-title" style="font-size: 3.4rem; margin-bottom: 1.25rem;">
+      Contact Us Now to Get Your Mirror
+    </h1>
+    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8;">
+      Have questions about custom engravings, birth flower pairings, or bulk bridal party orders? Reach out directly to Saddam and Naina. We respond promptly to every inquiry.
+    </p>
+  </div>
+
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
+      
+      <!-- Contact Form -->
+      <div style="background: #FFF; padding: 3rem; border-radius: 28px; border: 1.5px solid var(--border-delicate); box-shadow: var(--shadow-soft);">
+        <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--primary-deep); margin-bottom: 0.75rem;">
+          Send an Inquiry or Custom Request
+        </h2>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 2rem;">
+          Fill in your details below and our team will get back to you within 2 hours.
+        </p>
+
+        {% form 'contact' %}
+          {% if form.posted_successfully? %}
+            <div style="background: #E8F5E9; color: #2E7D32; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; font-weight: 600;">
+              🌸 Thank you! Your custom keepsake inquiry has been received. Saddam or Naina will reach out to you shortly.
+            </div>
+          {% endif %}
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; color: var(--primary-deep);" for="ContactFormName">Your Name</label>
+              <input type="text" id="ContactFormName" name="contact[name]" required class="input-engrave-text" placeholder="e.g. Sophia Miller">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; color: var(--primary-deep);" for="ContactFormEmail">Your Email</label>
+              <input type="email" id="ContactFormEmail" name="contact[email]" required class="input-engrave-text" placeholder="sophia@example.com">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; color: var(--primary-deep);" for="ContactFormSubject">Subject / Product of Interest</label>
+            <select id="ContactFormSubject" name="contact[subject]" class="input-engrave-text" style="cursor: pointer;">
+              <option>Custom Engraved Pocket / LED Mirror</option>
+              <option>Personalized Leather Lipstick Case Keychain</option>
+              <option>Velvet Travel Jewelry Box</option>
+              <option>Bridesmaid Proposal Gift Box Set (Bulk Order)</option>
+              <option>Other Custom Keepsake Request</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1.75rem;">
+            <label style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; color: var(--primary-deep);" for="ContactFormMessage">Custom Engraving Details / Notes</label>
+            <textarea id="ContactFormMessage" name="contact[body]" rows="5" class="input-engrave-text" placeholder="Please mention names, birth month flowers, required delivery date, or any special requests..." style="resize: vertical;"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">
+            <span>Submit Custom Request</span>
+          </button>
+        {% endform %}
+      </div>
+
+      <!-- Studio Contact Info & Policies -->
+      <div>
+        <!-- Quick Call Card -->
+        <div style="background: #FFF; padding: 2rem; border-radius: 24px; border: 1.5px solid var(--border-delicate); box-shadow: var(--shadow-hover); margin-bottom: 2rem;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
+            <span style="font-size: 1.8rem;">📞</span>
+            <div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--primary-deep); margin: 0;">Call or Text Our Studio</h3>
+              <span style="font-size: 0.82rem; color: var(--primary-rose); font-weight: 600;">Direct Artisan Phone</span>
+            </div>
+          </div>
+          <a href="tel:9782338050" style="display: block; font-size: 1.6rem; font-weight: 700; color: var(--primary-dark-rose); margin-bottom: 1rem; text-decoration: none;">
+            (978) 233-8050
+          </a>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+            Have questions about birth flower pairings, laser etching depth, or bridal party shipping? Call or text us directly.
+          </p>
+          <a href="tel:9782338050" class="btn btn-primary" style="width: 100%;">
+            <span>Call (978) 233-8050 Now</span>
+          </a>
+        </div>
+
+        <!-- Studio Hours -->
+        <div style="background: var(--bg-cream); padding: 1.75rem; border-radius: 20px; border: 1px solid var(--border-delicate); margin-bottom: 2rem;">
+          <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--primary-deep); margin-bottom: 10px;">
+            ⏱️ Studio Working Hours
+          </h4>
+          <div style="display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 6px;">
+            <span>Monday &ndash; Friday:</span>
+            <strong>9:00 AM &ndash; 7:00 PM EST</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 6px;">
+            <span>Saturday:</span>
+            <strong>10:00 AM &ndash; 5:00 PM EST</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--text-secondary);">
+            <span>Sunday:</span>
+            <strong>Closed (Family & Design Time)</strong>
+          </div>
+        </div>
+
+        <!-- Complete Store Policies -->
+        <div style="background: #FFF; padding: 2rem; border-radius: 24px; border: 1.5px solid var(--border-delicate); box-shadow: var(--shadow-soft);">
+          <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--primary-deep); margin-bottom: 1.25rem;">
+            Store Policies
+          </h4>
+
+          <div style="margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-delicate);">
+            <h5 style="font-size: 0.95rem; font-weight: 700; color: var(--primary-deep); margin-bottom: 4px;">
+              💳 Accepted Payment Methods
+            </h5>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+              PayPal, Visa, Mastercard, Apple Pay, and Gift Cards. Also accepts Etsy Gift Cards and Etsy Credits.
+            </p>
+          </div>
+
+          <div>
+            <h5 style="font-size: 0.95rem; font-weight: 700; color: var(--primary-deep); margin-bottom: 4px;">
+              🔄 Returns & Exchanges
+            </h5>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+              See item details for return and exchange eligibility. Because each personalized item is engraved with unique names and birth flowers, non-defective custom orders are crafted to order. We guarantee 100% accuracy on all engravings.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Page",
+  "settings": []
+}
+{% endschema %}

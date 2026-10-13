@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story & Team &bull; WrapUpBlooms</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../WrapUpBlooms-Theme/assets/theme.css">
+  <style>
+    .page-hero {
+      padding: 5rem 0 3.5rem;
+      background: radial-gradient(circle at 50% 30%, #FFF0F5 0%, var(--bg-cream) 100%);
+      text-align: center;
+      position: relative;
+    }
+    .process-step {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+      background: #FFF;
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid var(--border-delicate);
+      box-shadow: var(--shadow-soft);
+    }
+    .step-number {
+      font-size: 2.5rem;
+      font-family: var(--font-serif);
+      color: var(--accent-rose-gold);
+      line-height: 1;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Blossom Petals Canvas -->
+  <canvas id="petals-canvas"></canvas>
+
+  <button id="toggle-petals" class="petals-toggle-btn" aria-label="Toggle Floating Blooms Animation">
+    <span class="sparkle-dot"></span> Floating Blooms: ON
+  </button>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Announcement">
+    <div class="container">
+      <div class="marquee-content">
+        <span class="badge-pill">Special Offer</span>
+        <span>🌸 <strong>Free Handcrafted Luxury Gift Box Packaging on orders over $50</strong></span>
+        <span style="opacity: 0.5;">•</span>
+        <span>📞 <strong>Call/Text: <a href="tel:9782338050" style="color: inherit; text-decoration: underline;">(978) 233-8050</a></strong></span>
+        <span style="opacity: 0.5;">•</span>
+        <span>✨ <strong>Use code BLOOM15 for 15% Off Your First Order</strong></span>
+        <span class="badge-pill" style="background: rgba(255,255,255,0.8);">5.0 ★ Top Rated</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-Row Luxury Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-top-row">
+        <div class="header-brand">
+          <a href="index.html" class="brand-logo-text">
+            <span class="bloom-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V12m4.5 0a4.5 4.5 0 1 1-4.5 4.5M16.5 12H12m-4.5 0a4.5 4.5 0 1 0 4.5 4.5M7.5 12H12m0 4.5V12" />
+                <circle cx="12" cy="12" r="2.5" fill="currentColor" />
+              </svg>
+            </span>
+            <span>WrapUpBlooms</span>
+          </a>
+          <span class="brand-tagline-sub">Personalized Floral Keepsakes & Gifts</span>
+        </div>
+
+        <div class="header-top-actions">
+          <a href="tel:9782338050" class="header-phone-pill" title="Call or Text WrapUpBlooms">
+            <span>📞</span>
+            <span>(978) 233-8050</span>
+          </a>
+
+          <button class="action-icon-btn" aria-label="Search" onclick="alert('Search WrapUpBlooms catalog');">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+
+          <button class="action-icon-btn cart-trigger-btn" aria-label="View Cart" onclick="window.WrapUpBloomsTheme.openCart();">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-count-badge">2</span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="header-nav-row" role="navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          
+          <li class="nav-item">
+            <a href="index.html#featured-collection" class="nav-link">
+              <span>Shop Collections</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <div class="nav-dropdown">
+              <a href="index.html#featured-collection" class="dropdown-item"><span class="icon">🌸</span><span>All Personalized Gifts</span></a>
+              <a href="pocket-mirrors.html" class="dropdown-item"><span class="icon">🪞</span><span>Pocket & LED Mirrors</span></a>
+              <a href="jewelry-boxes.html" class="dropdown-item"><span class="icon">💍</span><span>Jewelry & Keepsake Boxes</span></a>
+              <a href="index.html#featured-collection" class="dropdown-item"><span class="icon">💄</span><span>Lipstick Case Keychains</span></a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="pocket-mirrors.html" class="nav-link">Pocket Mirrors</a></li>
+          <li class="nav-item"><a href="jewelry-boxes.html" class="nav-link">Jewelry Boxes</a></li>
+          <li class="nav-item"><a href="our-story.html" class="nav-link active">Our Story</a></li>
+          <li class="nav-item"><a href="reviews.html" class="nav-link">Reviews</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container" style="max-width: 860px;">
+      <span class="section-subtitle-pill">Behind the Blooms</span>
+      <h1 class="section-title" style="font-size: 3.4rem; margin-bottom: 1.25rem;">
+        From Fresh Petals to Timeless Keepsakes
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8;">
+        WrapUpBlooms began with a simple belief: that the beauty of a flower shouldn't wilt in a week, and that the gifts we carry every day should hold deep personal meaning.
+      </p>
+    </div>
+  </section>
+
+  <!-- Narrative Section -->
+  <section style="padding: 5rem 0; background: #FFF;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 5rem;">
+        <div>
+          <span class="section-subtitle-pill">Our Heritage</span>
+          <h2 style="font-family: var(--font-serif); font-size: 2.6rem; color: var(--primary-deep); margin-bottom: 1.25rem; line-height: 1.25;">
+            Crafting Tangible Reminders of Love & Friendship
+          </h2>
+          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.25rem;">
+            When we first launched WrapUpBlooms on Etsy, we noticed that while people love fresh floral bouquets, what they truly yearn for is something permanent &mdash; a pocket mirror that lights up during an intimate wedding rehearsal, a leather lipstick sleeve clipped to an everyday handbag, or an engraved wooden family puzzle resting on the living room mantle.
+          </p>
+          <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            By merging botanical birth month illustrations with permanent precision laser engraving, we turned everyday functional accessories into cherished keepsakes. Over 12,400 customers later, our mission remains unchanged: handcrafting every piece with patience, care, and heartfelt devotion.
+          </p>
+          <a href="contact.html" class="btn btn-primary"><span>Contact Us Now to Get Your Mirror</span></a>
+        </div>
+
+        <div style="position: relative; border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-hover);">
+          <img src="images/story-artisan-craft.jpg" alt="Artisan Studio Workshop" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); padding: 18px; border-radius: 16px; border: 1px solid var(--border-delicate);">
+            <div style="font-weight: 700; color: var(--primary-deep); font-size: 0.95rem;">Small Batch &bull; Individually Inspected</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Every piece hand-cleaned and polished before packaging.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Members & Production Partners Section -->
+  <section style="padding: 6rem 0; background: var(--bg-cream);">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-subtitle-pill">Our People & Partners</span>
+        <h2 class="section-title">Meet the Team Behind WrapUpBlooms</h2>
+        <p>The dedicated creators, crafters, and laser engraving masters bringing your custom visions to life.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 4rem;">
+        
+        <!-- Saddam -->
+        <div style="background: #FFF; border-radius: 28px; padding: 2.5rem; border: 1.5px solid var(--border-delicate); box-shadow: var(--shadow-hover);">
+          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 1.25rem;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--bg-petal); color: var(--primary-rose); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 700;">
+              S
+            </div>
+            <div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.45rem; color: var(--primary-deep); margin: 0;">Saddam</h3>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary-rose); text-transform: uppercase; letter-spacing: 0.06em;">Designer, Owner, Curator</span>
+            </div>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+            Saddam is the visionary behind WrapUpBlooms. From initial botanical line-drawing drafts to selecting premium vegan leathers and metallic hardware, he curates each collection to balance timeless aesthetic elegance with everyday durability.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed var(--border-delicate); padding-top: 10px;">
+            🌸 Specialty: Floral Typography & Product Architecture
+          </div>
+        </div>
+
+        <!-- Naina -->
+        <div style="background: #FFF; border-radius: 28px; padding: 2.5rem; border: 1.5px solid var(--border-delicate); box-shadow: var(--shadow-hover);">
+          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 1.25rem;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--bg-petal); color: var(--primary-rose); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 700;">
+              N
+            </div>
+            <div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.45rem; color: var(--primary-deep); margin: 0;">Naina</h3>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary-rose); text-transform: uppercase; letter-spacing: 0.06em;">Designer, Crafter, Customer Service</span>
+            </div>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+            Naina oversees hands-on craftsmanship, intricate embellishments, and personalized customer care. Whether a customer is arranging custom bridesmaid sets or requesting urgent turnaround for an upcoming baby shower, Naina ensures every request is met with warmth and perfection.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed var(--border-delicate); padding-top: 10px;">
+            ✨ Specialty: Hand Assembly, Gift Packaging & Client Relations
+          </div>
+        </div>
+
+        <!-- Engraving Shop -->
+        <div style="background: #FFF; border-radius: 28px; padding: 2.5rem; border: 1.5px solid var(--border-delicate); box-shadow: var(--shadow-hover);">
+          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 1.25rem;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--bg-blush); color: var(--accent-gold); display: flex; align-items: center; justify-content: center; font-size: 1.75rem;">
+              ⚙️
+            </div>
+            <div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.45rem; color: var(--primary-deep); margin: 0;">Engraving Shop</h3>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary-dark-rose); text-transform: uppercase; letter-spacing: 0.06em;">Production Partner &bull; NH, United States</span>
+            </div>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+            A skilled craftsman and trusted partner who handles the physical engraving and localized dispatch for our US-bound orders. Operating out of New Hampshire, they utilize calibrated industrial fiber lasers to render razor-sharp botanical engravings on all metallic and leather surfaces.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed var(--border-delicate); padding-top: 10px;">
+            🇺🇸 Location: New Hampshire, USA &bull; 1-2 Day Dispatch
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-Step Creation Process -->
+  <section style="padding: 5rem 0; background: #FFF;">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header-center">
+        <span class="section-subtitle-pill">Behind the Scenes</span>
+        <h2 class="section-title">Our 5-Step Artisan Process</h2>
+        <p>From your custom order to her hands, here is how we ensure each gift is flawless.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--primary-deep); margin-bottom: 6px;">Botanical Drafting & Personalization Proof</h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">Your recipient's name and selected birth month flower are matched against our curated vector typography to ensure harmonious proportions.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--primary-deep); margin-bottom: 6px;">Precision Laser Etching</h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">Executed by our trusted New Hampshire production partner with microscopic laser passes that etch cleanly into leather or metallic compact surfaces.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--primary-deep); margin-bottom: 6px;">Hand Cleaning & Mirror Calibration</h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">Every mirror and casing is manually inspected for optical clarity, LED halo battery charge, and seam alignment.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--primary-deep); margin-bottom: 6px;">Boutique Ribbon Gift Boxing</h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">Nestled into our signature pink and cream presentation box, hand-tied with double-faced satin ribbon and an embossed botanical care card.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">05</div>
+        <div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--primary-deep); margin-bottom: 6px;">Fast Localized US Dispatch</h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">Carefully packaged in protective mailers and dispatched in 1-2 business days with full door-to-door tracking.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="contact.html" class="btn btn-primary" style="padding: 16px 36px;">
+          <span>Contact Us Now to Get Your Mirror</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-out AJAX Cart Drawer -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay"></div>
+  <div id="cart-drawer" class="cart-drawer" role="dialog" aria-modal="true" aria-label="Your Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">Your Bloom Cart</h3>
+      <button id="cart-drawer-close" class="cart-close-btn" aria-label="Close Cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+    </div>
+    <div class="shipping-meter">
+      <div id="shipping-meter-text" class="shipping-meter-text">🌸 Add <strong>$7.50</strong> more to unlock FREE Luxury Gift Box Packaging!</div>
+      <div class="shipping-bar-track"><div id="shipping-meter-fill" class="shipping-bar-fill" style="width: 87%;"></div></div>
+    </div>
+    <div class="cart-drawer-body"><div id="cart-drawer-items-list"></div></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row"><span class="subtotal-label">Subtotal</span><span id="cart-drawer-subtotal" class="subtotal-val">$52.50</span></div>
+      <button type="button" class="btn btn-primary" style="width: 100%;" onclick="alert('Proceeding to checkout');"><span>Proceed to Secure Checkout</span></button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-brand-title">WrapUpBlooms</h3>
+          <p class="footer-desc">Handcrafted personalized gifts for women, bridesmaids, and cherished family keepsakes. Made with love, laser precision, and botanical inspiration.</p>
+          <div style="font-size: 0.95rem; color: #FFF; margin-bottom: 0.5rem;">📞 <strong>Direct Contact:</strong> <a href="tel:9782338050" style="color: var(--accent-blush); text-decoration: underline;">(978) 233-8050</a></div>
+          <div style="font-size: 0.85rem; color: #D6BDC4;">✨ Over 12,000+ 5-Star Reviews &bull; Free Gift Packaging Available</div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#featured-collection">All Personalized Gifts</a></li>
+            <li><a href="pocket-mirrors.html">LED Pocket Mirrors</a></li>
+            <li><a href="jewelry-boxes.html">Travel Jewelry Cases</a></li>
+            <li><a href="index.html#featured-collection">Lipstick Keychains</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="our-story.html">About WrapUpBlooms</a></li>
+            <li><a href="tel:9782338050">📞 Call: (978) 233-8050</a></li>
+            <li><a href="contact.html">Contact Us Now to Get Your Mirror</a></li>
+            <li><a href="reviews.html">Customer Reviews</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Join the Bloom Club</h4>
+          <p style="font-size: 0.85rem; color: #D6BDC4; margin-bottom: 0.75rem;">Enjoy 15% off your first personalized keepsake order.</p>
+          <div style="margin-top: 1rem;"><a href="contact.html" class="btn btn-secondary" style="width: 100%; font-size: 0.82rem; padding: 10px 16px;">Contact Us Now to Get Your Mirror</a></div>
+        </div>
+      </div>
+
+      <!-- Store Policies in Footer -->
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.12); padding: 2rem 0 1.5rem; margin-bottom: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.25rem 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <h5 style="color: #FFF; font-family: var(--font-serif); font-size: 1.05rem; margin-bottom: 0.35rem;">💳 Accepted Payment Methods</h5>
+          <p style="color: #D6BDC4; font-size: 0.85rem; line-height: 1.6; margin: 0;">PayPal, Visa, Mastercard, Apple Pay, and Gift Cards. Also accepts Etsy Gift Cards and Etsy Credits.</p>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.25rem 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <h5 style="color: #FFF; font-family: var(--font-serif); font-size: 1.05rem; margin-bottom: 0.35rem;">🔄 Returns & Exchanges</h5>
+          <p style="color: #D6BDC4; font-size: 0.85rem; line-height: 1.6; margin: 0;">See item details for return and exchange eligibility.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 WrapUpBlooms. All rights reserved. Handcrafted with passion.</div>
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+          <span>📞 (978) 233-8050</span><span>&bull;</span><span>🔒 256-Bit SSL Encrypted Checkout</span><span>&bull;</span><span>🌸 Handcrafted in Small Batches</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../WrapUpBlooms-Theme/assets/floating-petals.js"></script>
+  <script src="../WrapUpBlooms-Theme/assets/water-ripple.js"></script>
+  <script src="../WrapUpBlooms-Theme/assets/theme.js"></script>
+</body>
+</html>

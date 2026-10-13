@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Studio & Custom Inquiries &bull; WrapUpBlooms</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../WrapUpBlooms-Theme/assets/theme.css">
+  <style>
+    .page-hero {
+      padding: 5rem 0 3.5rem;
+      background: radial-gradient(circle at 50% 30%, #FFF0F5 0%, var(--bg-cream) 100%);
+      text-align: center;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Blossom Petals Canvas -->
+  <canvas id="petals-canvas"></canvas>
+
+  <button id="toggle-petals" class="petals-toggle-btn" aria-label="Toggle Floating Blooms Animation">
+    <span class="sparkle-dot"></span> Floating Blooms: ON
+  </button>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Announcement">
+    <div class="container">
+      <div class="marquee-content">
+        <span class="badge-pill">Special Offer</span>
+        <span>🌸 <strong>Free Handcrafted Luxury Gift Box Packaging on orders over $50</strong></span>
+        <span style="opacity: 0.5;">•</span>
+        <span>📞 <strong>Call/Text: <a href="tel:9782338050" style="color: inherit; text-decoration: underline;">(978) 233-8050</a></strong></span>
+        <span style="opacity: 0.5;">•</span>
+        <span>✨ <strong>Use code BLOOM15 for 15% Off Your First Order</strong></span>
+        <span class="badge-pill" style="background: rgba(255,255,255,0.8);">5.0 ★ Top Rated</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-Row Luxury Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-top-row">
+        <div class="header-brand">
+          <a href="index.html" class="brand-logo-text">
+            <span class="bloom-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V12m4.5 0a4.5 4.5 0 1 1-4.5 4.5M16.5 12H12m-4.5 0a4.5 4.5 0 1 0 4.5 4.5M7.5 12H12m0 4.5V12" />
+                <circle cx="12" cy="12" r="2.5" fill="currentColor" />
+              </svg>
+            </span>
+            <span>WrapUpBlooms</span>
+          </a>
+          <span class="brand-tagline-sub">Personalized Floral Keepsakes & Gifts</span>
+        </div>
+
+        <div class="header-top-actions">
+          <a href="tel:9782338050" class="header-phone-pill" title="Call or Text WrapUpBlooms">
+            <span>📞</span>
+            <span>(978) 233-8050</span>
+          </a>
+
+          <button class="action-icon-btn" aria-label="Search" onclick="alert('Search WrapUpBlooms catalog');">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+
+          <button class="action-icon-btn cart-trigger-btn" aria-label="View Cart" onclick="window.WrapUpBloomsTheme.openCart();">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-count-badge">2</span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="header-nav-row" role="navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          
+          <li class="nav-item">
+            <a href="index.html#featured-collection" class="nav-link">
+              <span>Shop Collections</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <div class="nav-dropdown">
+              <a href="index.html#featured-collection" class="dropdown-item"><span class="icon">🌸</span><span>All Personalized Gifts</span></a>
+              <a href="pocket-mirrors.html" class="dropdown-item"><span class="icon">🪞</span><span>Pocket & LED Mirrors</span></a>
+              <a href="jewelry-boxes.html" class="dropdown-item"><span class="icon">💍</span><span>Jewelry & Keepsake Boxes</span></a>
+              <a href="index.html#featured-collection" class="dropdown-item"><span class="icon">💄</span><span>Lipstick Case Keychains</span></a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="pocket-mirrors.html" class="nav-link">Pocket Mirrors</a></li>
+          <li class="nav-item"><a href="jewelry-boxes.html" class="nav-link">Jewelry Boxes</a></li>
+          <li class="nav-item"><a href="our-story.html" class="nav-link">Our Story</a></li>
+          <li class="nav-item"><a href="reviews.html" class="nav-link">Reviews</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container" style="max-width: 860px;">
+      <span class="section-subtitle-pill">Direct Artisan Concierge</span>
+      <h1 class="section-title" style="font-size: 3.4rem; margin-bottom: 1.25rem;">
+        Contact Us Now to Get Your Mirror
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8;">
+        Need custom birth flower engraving, bridal party discounts, or urgent gift turnaround? Saddam and Naina are ready to help you craft the perfect keepsake.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Form & Info Grid -->
+  <section style="padding: 5rem 0; background: #FFF;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
+        
+        <!-- Form -->
+        <div style="background: var(--bg-cream); padding: 3rem; border-radius: 28px; border: 1.5px solid var(--border-delicate); box-shadow: var(--shadow-soft);">
+          <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--primary-deep); margin-bottom: 0.75rem;">
+            Send an Inquiry or Custom Request
+          </h2>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 2rem;">
+            Fill in your details below and our team will get back to you within 2 hours.
+          </p>
+
+          <form onsubmit="event.preventDefault(); alert('🌸 Thank you! Your custom keepsake inquiry has been received. Saddam or Naina will reach out to you shortly.');">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div>
+                <label style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; color: var(--primary-deep);">Your Name</label>
+                <input type="text" required class="input-engrave-text" placeholder="e.g. Sophia Miller">
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; color: var(--primary-deep);">Your Email</label>
+                <input type="email" required class="input-engrave-text" placeholder="sophia@example.com">
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.25rem;">
+              <label style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; color: var(--primary-deep);">Subject / Product of Interest</label>
+              <select class="input-engrave-text" style="cursor: pointer;">
+                <option>Custom Engraved Pocket / LED Mirror</option>
+                <option>Personalized Leather Lipstick Case Keychain</option>
+                <option>Velvet Travel Jewelry Box</option>
+                <option>Bridesmaid Proposal Gift Box Set (Bulk Order)</option>
+                <option>Other Custom Keepsake Request</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.75rem;">
+              <label style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; color: var(--primary-deep);">Custom Engraving Details / Notes</label>
+              <textarea rows="5" class="input-engrave-text" placeholder="Please mention names, birth month flowers, required delivery date, or any special requests..." style="resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">
+              <span>Submit Custom Request</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Studio Contact Info & Policies -->
+        <div>
+          <!-- Quick Call Card -->
+          <div style="background: #FFF; padding: 2rem; border-radius: 24px; border: 1px solid var(--border-delicate); box-shadow: var(--shadow-hover); margin-bottom: 2rem;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
+              <span style="font-size: 1.8rem;">📞</span>
+              <div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--primary-deep); margin: 0;">Call or Text Our Studio</h3>
+                <span style="font-size: 0.82rem; color: var(--primary-rose); font-weight: 600;">Direct Artisan Phone</span>
+              </div>
+            </div>
+            <a href="tel:9782338050" style="display: block; font-size: 1.6rem; font-weight: 700; color: var(--primary-dark-rose); margin-bottom: 1rem; text-decoration: none;">
+              (978) 233-8050
+            </a>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+              Have questions about birth flower pairings, laser etching depth, or bridal party shipping? Call or text us directly.
+            </p>
+            <a href="tel:9782338050" class="btn btn-primary" style="width: 100%;">
+              <span>Call (978) 233-8050 Now</span>
+            </a>
+          </div>
+
+          <!-- Studio Hours -->
+          <div style="background: var(--bg-cream); padding: 1.75rem; border-radius: 20px; border: 1px solid var(--border-delicate); margin-bottom: 2rem;">
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--primary-deep); margin-bottom: 10px;">
+              ⏱️ Studio Working Hours
+            </h4>
+            <div style="display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 6px;">
+              <span>Monday &ndash; Friday:</span>
+              <strong>9:00 AM &ndash; 7:00 PM EST</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 6px;">
+              <span>Saturday:</span>
+              <strong>10:00 AM &ndash; 5:00 PM EST</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--text-secondary);">
+              <span>Sunday:</span>
+              <strong>Closed (Family & Design Time)</strong>
+            </div>
+          </div>
+
+          <!-- Complete Store Policies -->
+          <div style="background: #FFF; padding: 2rem; border-radius: 24px; border: 1.5px solid var(--border-delicate); box-shadow: var(--shadow-soft);">
+            <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--primary-deep); margin-bottom: 1.25rem;">
+              Store Policies
+            </h4>
+
+            <div style="margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-delicate);">
+              <h5 style="font-size: 0.95rem; font-weight: 700; color: var(--primary-deep); margin-bottom: 4px;">
+                💳 Accepted Payment Methods
+              </h5>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                PayPal, Visa, Mastercard, Apple Pay, and Gift Cards. Also accepts Etsy Gift Cards and Etsy Credits.
+              </p>
+            </div>
+
+            <div>
+              <h5 style="font-size: 0.95rem; font-weight: 700; color: var(--primary-deep); margin-bottom: 4px;">
+                🔄 Returns & Exchanges
+              </h5>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                See item details for return and exchange eligibility. Because each personalized item is engraved with unique names and birth flowers, non-defective custom orders are crafted to order. We guarantee 100% accuracy on all engravings.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-out AJAX Cart Drawer -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay"></div>
+  <div id="cart-drawer" class="cart-drawer" role="dialog" aria-modal="true" aria-label="Your Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">Your Bloom Cart</h3>
+      <button id="cart-drawer-close" class="cart-close-btn" aria-label="Close Cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+    </div>
+    <div class="shipping-meter">
+      <div id="shipping-meter-text" class="shipping-meter-text">🌸 Add <strong>$7.50</strong> more to unlock FREE Luxury Gift Box Packaging!</div>
+      <div class="shipping-bar-track"><div id="shipping-meter-fill" class="shipping-bar-fill" style="width: 87%;"></div></div>
+    </div>
+    <div class="cart-drawer-body"><div id="cart-drawer-items-list"></div></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row"><span class="subtotal-label">Subtotal</span><span id="cart-drawer-subtotal" class="subtotal-val">$52.50</span></div>
+      <button type="button" class="btn btn-primary" style="width: 100%;" onclick="alert('Proceeding to checkout');"><span>Proceed to Secure Checkout</span></button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-brand-title">WrapUpBlooms</h3>
+          <p class="footer-desc">Handcrafted personalized gifts for women, bridesmaids, and cherished family keepsakes. Made with love, laser precision, and botanical inspiration.</p>
+          <div style="font-size: 0.95rem; color: #FFF; margin-bottom: 0.5rem;">📞 <strong>Direct Contact:</strong> <a href="tel:9782338050" style="color: var(--accent-blush); text-decoration: underline;">(978) 233-8050</a></div>
+          <div style="font-size: 0.85rem; color: #D6BDC4;">✨ Over 12,000+ 5-Star Reviews &bull; Free Gift Packaging Available</div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#featured-collection">All Personalized Gifts</a></li>
+            <li><a href="pocket-mirrors.html">LED Pocket Mirrors</a></li>
+            <li><a href="jewelry-boxes.html">Travel Jewelry Cases</a></li>
+            <li><a href="index.html#featured-collection">Lipstick Keychains</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="our-story.html">About WrapUpBlooms</a></li>
+            <li><a href="tel:9782338050">📞 Call: (978) 233-8050</a></li>
+            <li><a href="contact.html">Contact Us Now to Get Your Mirror</a></li>
+            <li><a href="reviews.html">Customer Reviews</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Join the Bloom Club</h4>
+          <p style="font-size: 0.85rem; color: #D6BDC4; margin-bottom: 0.75rem;">Enjoy 15% off your first personalized keepsake order.</p>
+          <div style="margin-top: 1rem;"><a href="contact.html" class="btn btn-secondary" style="width: 100%; font-size: 0.82rem; padding: 10px 16px;">Contact Us Now to Get Your Mirror</a></div>
+        </div>
+      </div>
+
+      <!-- Store Policies in Footer -->
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.12); padding: 2rem 0 1.5rem; margin-bottom: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.25rem 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <h5 style="color: #FFF; font-family: var(--font-serif); font-size: 1.05rem; margin-bottom: 0.35rem;">💳 Accepted Payment Methods</h5>
+          <p style="color: #D6BDC4; font-size: 0.85rem; line-height: 1.6; margin: 0;">PayPal, Visa, Mastercard, Apple Pay, and Gift Cards. Also accepts Etsy Gift Cards and Etsy Credits.</p>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.25rem 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <h5 style="color: #FFF; font-family: var(--font-serif); font-size: 1.05rem; margin-bottom: 0.35rem;">🔄 Returns & Exchanges</h5>
+          <p style="color: #D6BDC4; font-size: 0.85rem; line-height: 1.6; margin: 0;">See item details for return and exchange eligibility.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 WrapUpBlooms. All rights reserved. Handcrafted with passion.</div>
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+          <span>📞 (978) 233-8050</span><span>&bull;</span><span>🔒 256-Bit SSL Encrypted Checkout</span><span>&bull;</span><span>🌸 Handcrafted in Small Batches</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../WrapUpBlooms-Theme/assets/floating-petals.js"></script>
+  <script src="../WrapUpBlooms-Theme/assets/water-ripple.js"></script>
+  <script src="../WrapUpBlooms-Theme/assets/theme.js"></script>
+</body>
+</html>

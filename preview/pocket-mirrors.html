@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pocket & LED Compact Mirrors &bull; WrapUpBlooms</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../WrapUpBlooms-Theme/assets/theme.css">
+  <style>
+    .page-hero {
+      padding: 5rem 0 3.5rem;
+      background: radial-gradient(circle at 50% 30%, #FFF0F5 0%, var(--bg-cream) 100%);
+      text-align: center;
+      position: relative;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    .spec-card {
+      background: #FFF;
+      padding: 1.75rem;
+      border-radius: 20px;
+      border: 1px solid var(--border-delicate);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+    .spec-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary-rose);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Blossom Petals Canvas -->
+  <canvas id="petals-canvas"></canvas>
+
+  <!-- Petals Motion Toggle Pill -->
+  <button id="toggle-petals" class="petals-toggle-btn" aria-label="Toggle Floating Blooms Animation">
+    <span class="sparkle-dot"></span> Floating Blooms: ON
+  </button>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Announcement">
+    <div class="container">
+      <div class="marquee-content">
+        <span class="badge-pill">Special Offer</span>
+        <span>🌸 <strong>Free Handcrafted Luxury Gift Box Packaging on orders over $50</strong></span>
+        <span style="opacity: 0.5;">•</span>
+        <span>📞 <strong>Call/Text: <a href="tel:9782338050" style="color: inherit; text-decoration: underline;">(978) 233-8050</a></strong></span>
+        <span style="opacity: 0.5;">•</span>
+        <span>✨ <strong>Use code BLOOM15 for 15% Off Your First Order</strong></span>
+        <span class="badge-pill" style="background: rgba(255,255,255,0.8);">5.0 ★ Top Rated</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-Row Luxury Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <!-- Row 1: Logo & Top Actions -->
+      <div class="header-top-row">
+        <div class="header-brand">
+          <a href="index.html" class="brand-logo-text">
+            <span class="bloom-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V12m4.5 0a4.5 4.5 0 1 1-4.5 4.5M16.5 12H12m-4.5 0a4.5 4.5 0 1 0 4.5 4.5M7.5 12H12m0 4.5V12" />
+                <circle cx="12" cy="12" r="2.5" fill="currentColor" />
+              </svg>
+            </span>
+            <span>WrapUpBlooms</span>
+          </a>
+          <span class="brand-tagline-sub">Personalized Floral Keepsakes & Gifts</span>
+        </div>
+
+        <div class="header-top-actions">
+          <a href="tel:9782338050" class="header-phone-pill" title="Call or Text WrapUpBlooms">
+            <span>📞</span>
+            <span>(978) 233-8050</span>
+          </a>
+
+          <button class="action-icon-btn" aria-label="Search" onclick="alert('Search WrapUpBlooms catalog');">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+
+          <button class="action-icon-btn cart-trigger-btn" aria-label="View Cart" onclick="window.WrapUpBloomsTheme.openCart();">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="cart-count-badge">2</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Row 2: Centered Navigation Bar -->
+      <nav class="header-nav-row" role="navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          
+          <li class="nav-item">
+            <a href="index.html#featured-collection" class="nav-link">
+              <span>Shop Collections</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <div class="nav-dropdown">
+              <a href="index.html#featured-collection" class="dropdown-item"><span class="icon">🌸</span><span>All Personalized Gifts</span></a>
+              <a href="pocket-mirrors.html" class="dropdown-item"><span class="icon">🪞</span><span>Pocket & LED Mirrors</span></a>
+              <a href="jewelry-boxes.html" class="dropdown-item"><span class="icon">💍</span><span>Jewelry & Keepsake Boxes</span></a>
+              <a href="index.html#featured-collection" class="dropdown-item"><span class="icon">💄</span><span>Lipstick Case Keychains</span></a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a href="pocket-mirrors.html" class="nav-link active">Pocket Mirrors</a></li>
+          <li class="nav-item"><a href="jewelry-boxes.html" class="nav-link">Jewelry Boxes</a></li>
+          <li class="nav-item"><a href="our-story.html" class="nav-link">Our Story</a></li>
+          <li class="nav-item"><a href="reviews.html" class="nav-link">Reviews</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container" style="max-width: 800px;">
+      <span class="section-subtitle-pill">Signature Collection</span>
+      <h1 class="section-title" style="font-size: 3.2rem; margin-bottom: 1.25rem;">
+        Custom Engraved Pocket & LED Compact Mirrors
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">
+        Engineered for effortless purse glamour and heartfelt gifting. Each compact is individually laser-etched with delicate birth flowers, initials, and bespoke messages by our New Hampshire engraving partners.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#mirrors-catalog" class="btn btn-primary"><span>Explore Mirror Models</span></a>
+        <a href="contact.html" class="btn btn-secondary"><span>Contact Us Now to Get Your Mirror</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mirror Engineering Specifications -->
+  <section style="padding: 5rem 0; background: #FFF;">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-subtitle-pill">Artisan Engineering</span>
+        <h2 class="section-title">Why Our Compact Mirrors Stand Out</h2>
+        <p>A touch of everyday luxury, designed to fit cleanly inside evening clutches, totes, and cosmetic organizers.</p>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-card">
+          <div class="spec-icon">✨</div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--primary-deep); margin-bottom: 8px;">Rechargeable Halo LED</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">Soft, daylight-balanced ring light for crisp touch-ups in dimly lit evening venues, restaurants, and vehicles.</p>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-icon">🔍</div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--primary-deep); margin-bottom: 8px;">1x & 2x Dual Magnification</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">One standard distortion-free optical mirror and one 2x magnification mirror for eyeliner, mascara, and lipstick precision.</p>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-icon">🌿</div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--primary-deep); margin-bottom: 8px;">Permanent Laser Etching</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">Not a printed sticker. Deep, indelible laser engraving that will never peel, rub off, or fade with daily purse friction.</p>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-icon">🎁</div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--primary-deep); margin-bottom: 8px;">Ready-to-Gift Packaging</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">Arrives nestled in our signature blush presentation box tied with a satin ribbon and dried botanical greeting insert.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Mirrors Product Showcase -->
+  <section id="mirrors-catalog" style="padding: 6rem 0; background: var(--bg-cream);">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-subtitle-pill">Curated Selection</span>
+        <h2 class="section-title">Explore Our Compact Mirror Designs</h2>
+        <p>Choose your favorite finish and customize with your birth month flower, monogram, or custom text.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        
+        <!-- Mirror 1 -->
+        <div class="product-card">
+          <div class="product-card-media">
+            <span class="product-badge-sale">Best Seller</span>
+            <span class="product-badge-custom">LED Illuminated</span>
+            <img src="images/bespoke-compact-mirror.jpg" alt="Custom Engraved LED Pocket Makeup Mirror">
+          </div>
+          <div class="product-rating">★★★★★ <span style="font-size: 0.75rem; color: var(--text-muted);">(5.0 &bull; 619 reviews)</span></div>
+          <h3 class="product-title">Rose Gold Halo LED Pocket Compact Mirror</h3>
+          <p class="product-tagline">Dual 1x/2x magnification &bull; USB-C rechargeable</p>
+          <div class="product-price-row">
+            <div class="price-container">
+              <span class="current-price">$28.50</span>
+              <span class="compare-price">$35.00</span>
+            </div>
+            <a href="contact.html" class="btn-quick-add">🌸 Personalize</a>
+          </div>
+        </div>
+
+        <!-- Mirror 2 -->
+        <div class="product-card">
+          <div class="product-card-media">
+            <span class="product-badge-custom">Laser Etched</span>
+            <img src="images/product-compact-mirror.jpg" alt="Vintage Floral Metallic Pocket Mirror">
+          </div>
+          <div class="product-rating">★★★★★ <span style="font-size: 0.75rem; color: var(--text-muted);">(5.0 &bull; 480 reviews)</span></div>
+          <h3 class="product-title">Vintage Botanical Floral Pocket Mirror</h3>
+          <p class="product-tagline">Solid alloy metal casing &bull; Antique floral wreath</p>
+          <div class="product-price-row">
+            <div class="price-container">
+              <span class="current-price">$22.00</span>
+              <span class="compare-price">$28.00</span>
+            </div>
+            <a href="contact.html" class="btn-quick-add">🌸 Personalize</a>
+          </div>
+        </div>
+
+        <!-- Mirror 3 -->
+        <div class="product-card">
+          <div class="product-card-media">
+            <span class="product-badge-sale">Bridal Favorite</span>
+            <span class="product-badge-custom">Mother of the Bride</span>
+            <img src="images/bespoke-compact-mirror.jpg" alt="Mother of the Bride Keepsake Mirror">
+          </div>
+          <div class="product-rating">★★★★★ <span style="font-size: 0.75rem; color: var(--text-muted);">(5.0 &bull; 340 reviews)</span></div>
+          <h3 class="product-title">Mother of the Bride / Maid of Honor Keepsake Mirror</h3>
+          <p class="product-tagline">Custom wedding date &bull; Script calligraphy</p>
+          <div class="product-price-row">
+            <div class="price-container">
+              <span class="current-price">$26.00</span>
+              <span class="compare-price">$32.00</span>
+            </div>
+            <a href="contact.html" class="btn-quick-add">🌸 Personalize</a>
+          </div>
+        </div>
+
+        <!-- Mirror 4 -->
+        <div class="product-card">
+          <div class="product-card-media">
+            <span class="product-badge-custom">Built-In Mirror</span>
+            <img src="images/bespoke-lipstick-keychain.jpg" alt="Leather Lipstick Case Keychain with Mirror">
+          </div>
+          <div class="product-rating">★★★★★ <span style="font-size: 0.75rem; color: var(--text-muted);">(5.0 &bull; 842 reviews)</span></div>
+          <h3 class="product-title">Leather Lipstick Case Keychain with Interior Mirror</h3>
+          <p class="product-tagline">Vegan leather sleeve &bull; Built-in touch-up mirror</p>
+          <div class="product-price-row">
+            <div class="price-container">
+              <span class="current-price">$24.00</span>
+              <span class="compare-price">$30.00</span>
+            </div>
+            <a href="contact.html" class="btn-quick-add">🌸 Personalize</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Birth Flower Engraving Guide for Mirrors -->
+  <section style="padding: 5rem 0; background: #FFF;">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-subtitle-pill">Botanical Heritage</span>
+        <h2 class="section-title">Official Birth Month Flowers Available</h2>
+        <p>Select her birth month flower to be laser-engraved with micro-precision onto her compact mirror.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; text-align: center;">
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-delicate);">
+          <div style="font-size: 1.75rem; margin-bottom: 4px;">🌸</div>
+          <strong>January</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Carnation</span>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-delicate);">
+          <div style="font-size: 1.75rem; margin-bottom: 4px;">💜</div>
+          <strong>February</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Violet</span>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-delicate);">
+          <div style="font-size: 1.75rem; margin-bottom: 4px;">🌼</div>
+          <strong>March</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Daffodil</span>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-delicate);">
+          <div style="font-size: 1.75rem; margin-bottom: 4px;">🤍</div>
+          <strong>April</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Daisy</span>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-delicate);">
+          <div style="font-size: 1.75rem; margin-bottom: 4px;">🌿</div>
+          <strong>May</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Lily of Valley</span>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-delicate);">
+          <div style="font-size: 1.75rem; margin-bottom: 4px;">🌹</div>
+          <strong>June</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Rose</span>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-delicate);">
+          <div style="font-size: 1.75rem; margin-bottom: 4px;">🪷</div>
+          <strong>July</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Water Lily</span>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-delicate);">
+          <div style="font-size: 1.75rem; margin-bottom: 4px;">🌺</div>
+          <strong>August</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Poppy</span>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-delicate);">
+          <div style="font-size: 1.75rem; margin-bottom: 4px;">🌸</div>
+          <strong>September</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Morning Glory</span>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-delicate);">
+          <div style="font-size: 1.75rem; margin-bottom: 4px;">🌻</div>
+          <strong>October</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Marigold</span>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-delicate);">
+          <div style="font-size: 1.75rem; margin-bottom: 4px;">🏵️</div>
+          <strong>November</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Peony</span>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-delicate);">
+          <div style="font-size: 1.75rem; margin-bottom: 4px;">❄️</div>
+          <strong>December</strong><br><span style="font-size: 0.8rem; color: var(--text-muted);">Holly</span>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="contact.html" class="btn btn-primary" style="padding: 16px 36px;">
+          <span>Contact Us Now to Get Your Mirror</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-out AJAX Cart Drawer -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay"></div>
+  <div id="cart-drawer" class="cart-drawer" role="dialog" aria-modal="true" aria-label="Your Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">Your Bloom Cart</h3>
+      <button id="cart-drawer-close" class="cart-close-btn" aria-label="Close Cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+    </div>
+    <div class="shipping-meter">
+      <div id="shipping-meter-text" class="shipping-meter-text">🌸 Add <strong>$7.50</strong> more to unlock FREE Luxury Gift Box Packaging!</div>
+      <div class="shipping-bar-track"><div id="shipping-meter-fill" class="shipping-bar-fill" style="width: 87%;"></div></div>
+    </div>
+    <div class="cart-drawer-body"><div id="cart-drawer-items-list"></div></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row"><span class="subtotal-label">Subtotal</span><span id="cart-drawer-subtotal" class="subtotal-val">$52.50</span></div>
+      <button type="button" class="btn btn-primary" style="width: 100%;" onclick="alert('Proceeding to checkout');"><span>Proceed to Secure Checkout</span></button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-brand-title">WrapUpBlooms</h3>
+          <p class="footer-desc">Handcrafted personalized gifts for women, bridesmaids, and cherished family keepsakes. Made with love, laser precision, and botanical inspiration.</p>
+          <div style="font-size: 0.95rem; color: #FFF; margin-bottom: 0.5rem;">📞 <strong>Direct Contact:</strong> <a href="tel:9782338050" style="color: var(--accent-blush); text-decoration: underline;">(978) 233-8050</a></div>
+          <div style="font-size: 0.85rem; color: #D6BDC4;">✨ Over 12,000+ 5-Star Reviews &bull; Free Gift Packaging Available</div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#featured-collection">All Personalized Gifts</a></li>
+            <li><a href="pocket-mirrors.html">LED Pocket Mirrors</a></li>
+            <li><a href="jewelry-boxes.html">Travel Jewelry Cases</a></li>
+            <li><a href="index.html#featured-collection">Lipstick Keychains</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="our-story.html">About WrapUpBlooms</a></li>
+            <li><a href="tel:9782338050">📞 Call: (978) 233-8050</a></li>
+            <li><a href="contact.html">Contact Us Now to Get Your Mirror</a></li>
+            <li><a href="reviews.html">Customer Reviews</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Join the Bloom Club</h4>
+          <p style="font-size: 0.85rem; color: #D6BDC4; margin-bottom: 0.75rem;">Enjoy 15% off your first personalized keepsake order.</p>
+          <div style="margin-top: 1rem;"><a href="contact.html" class="btn btn-secondary" style="width: 100%; font-size: 0.82rem; padding: 10px 16px;">Contact Us Now to Get Your Mirror</a></div>
+        </div>
+      </div>
+
+      <!-- Store Policies in Footer -->
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.12); padding: 2rem 0 1.5rem; margin-bottom: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.25rem 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <h5 style="color: #FFF; font-family: var(--font-serif); font-size: 1.05rem; margin-bottom: 0.35rem;">💳 Accepted Payment Methods</h5>
+          <p style="color: #D6BDC4; font-size: 0.85rem; line-height: 1.6; margin: 0;">PayPal, Visa, Mastercard, Apple Pay, and Gift Cards. Also accepts Etsy Gift Cards and Etsy Credits.</p>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.25rem 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <h5 style="color: #FFF; font-family: var(--font-serif); font-size: 1.05rem; margin-bottom: 0.35rem;">🔄 Returns & Exchanges</h5>
+          <p style="color: #D6BDC4; font-size: 0.85rem; line-height: 1.6; margin: 0;">See item details for return and exchange eligibility.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 WrapUpBlooms. All rights reserved. Handcrafted with passion.</div>
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+          <span>📞 (978) 233-8050</span><span>&bull;</span><span>🔒 256-Bit SSL Encrypted Checkout</span><span>&bull;</span><span>🌸 Handcrafted in Small Batches</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../WrapUpBlooms-Theme/assets/floating-petals.js"></script>
+  <script src="../WrapUpBlooms-Theme/assets/water-ripple.js"></script>
+  <script src="../WrapUpBlooms-Theme/assets/theme.js"></script>
+</body>
+</html>

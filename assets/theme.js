@@ -296,110 +296,12 @@
     });
   }
 
-  // Floating Concierge Chatbot Controller
-  function initChatbot() {
-    const trigger = document.getElementById('chatbot-toggle-btn');
-    const windowEl = document.getElementById('chatbot-window');
-    const closeBtn = document.getElementById('chatbot-close-btn');
-    const bodyEl = document.getElementById('chatbot-body');
-    const form = document.getElementById('chatbot-form');
-    const input = document.getElementById('chatbot-input');
-    const chips = document.querySelectorAll('.chatbot-chip');
-
-    if (!trigger || !windowEl) return;
-
-    function openChatbot() {
-      windowEl.classList.add('open');
-      if (input) input.focus();
-    }
-
-    function closeChatbot() {
-      windowEl.classList.remove('open');
-    }
-
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (windowEl.classList.contains('open')) {
-        closeChatbot();
-      } else {
-        openChatbot();
-      }
-    });
-
-    if (closeBtn) {
-      closeBtn.addEventListener('click', closeChatbot);
-    }
-
-    function scrollChatToBottom() {
-      if (bodyEl) {
-        bodyEl.scrollTop = bodyEl.scrollHeight;
-      }
-    }
-
-    function addMessage(text, isUser = false) {
-      const bubble = document.createElement('div');
-      bubble.className = `chat-bubble ${isUser ? 'user' : 'bot'}`;
-      bubble.innerHTML = text;
-      bodyEl.appendChild(bubble);
-      scrollChatToBottom();
-    }
-
-    function replyToQuery(query) {
-      const q = query.toLowerCase();
-      let reply = "";
-
-      if (q.includes('mirror') || q.includes('led') || q.includes('compact')) {
-        reply = `🪞 <strong>Our Pocket & LED Mirrors</strong> are individually laser-etched in New Hampshire with your choice of 12 birth flowers. They feature dual 1x/2x magnification and USB-C rechargeable halo light! <br><br><a href="pocket-mirrors.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.78rem; margin-top: 6px; display: inline-block;">View Pocket Mirrors →</a>`;
-      } else if (q.includes('box') || q.includes('jewelry') || q.includes('travel')) {
-        reply = `💍 <strong>Velvet Jewelry Boxes:</strong> Lined with anti-tangle blush velvet, 6 ring slots, and customized gold monogram script. <br><br><a href="jewelry-boxes.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.78rem; margin-top: 6px; display: inline-block;">View Jewelry Boxes →</a>`;
-      } else if (q.includes('flower') || q.includes('month') || q.includes('birth')) {
-        reply = `🌸 We offer all <strong>12 official birth month flowers</strong> (Jan Carnation to Dec Holly). Each is etched permanently so it will never rub off or fade! <br><br><a href="contact.html" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.78rem; margin-top: 6px; display: inline-block;">Ask About Your Month →</a>`;
-      } else if (q.includes('bridal') || q.includes('bridesmaid') || q.includes('bulk')) {
-        reply = `✨ <strong>Bridal Parties:</strong> Use code <strong>BLOOM15</strong> for 15% off, plus free luxury gift box packaging on orders over $50! For custom bridal sets of 5+, reach out to us directly for priority dispatch.`;
-      } else if (q.includes('phone') || q.includes('call') || q.includes('text') || q.includes('number')) {
-        reply = `📞 You can call or text Saddam and Naina directly at <a href="tel:9782338050" style="font-weight:700; color:var(--primary-dark-rose); text-decoration:underline;">(978) 233-8050</a>! We operate Mon-Sat 9AM-7PM EST.`;
-      } else {
-        reply = `🌸 Thank you for asking! Saddam and Naina personally review each custom keepsake request. Would you like to reserve yours now? <br><br><a href="contact.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.78rem; margin-top: 6px; display: inline-block;">Contact Us Now to Get Your Mirror →</a>`;
-      }
-
-      setTimeout(() => {
-        addMessage(reply, false);
-      }, 500);
-    }
-
-    if (chips.length) {
-      chips.forEach((chip) => {
-        chip.addEventListener('click', () => {
-          const text = chip.textContent.trim();
-          addMessage(text, true);
-          replyToQuery(text);
-        });
-      });
-    }
-
-    if (form && input) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const val = input.value.trim();
-        if (!val) return;
-        addMessage(val, true);
-        input.value = "";
-        replyToQuery(val);
-      });
-    }
-
-    window.WrapUpBloomsTheme = window.WrapUpBloomsTheme || {};
-    window.WrapUpBloomsTheme.openChatbot = openChatbot;
-    window.WrapUpBloomsTheme.closeChatbot = closeChatbot;
-  }
-
   document.addEventListener('DOMContentLoaded', () => {
     initStickyHeader();
     initCustomizer();
     initCartDrawer();
     initFAQ();
     initCollectionTabs();
-    initChatbot();
     updateCartCount();
   });
 

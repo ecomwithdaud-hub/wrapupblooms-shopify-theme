@@ -2,58 +2,11 @@
   <div class="container" style="max-width: 860px;">
     <div class="section-header-center">
       <span class="section-subtitle-pill">WrapUpBlooms</span>
-      <h1 class="section-title">{% if page.title != blank %}{{ page.title }}{% else %}WrapUpBlooms Boutique{% endif %}</h1>
+      <h1 class="section-title">{{ page.title }}</h1>
     </div>
 
     <div style="background: #FFF; border-radius: 28px; padding: 3rem; border: 1px solid var(--border-delicate); box-shadow: var(--shadow-soft); line-height: 1.8; color: var(--text-secondary);">
-      {% if page.content != blank %}
-        {{ page.content }}
-      {% else %}
-        <!-- Rich Default Boutique Content when page content is empty -->
-        <p style="font-size: 1.1rem; color: var(--primary-deep); font-weight: 600; margin-bottom: 1rem;">
-          Welcome to WrapUpBlooms &bull; Handcrafted Personalized Floral Keepsakes
-        </p>
-        <p style="margin-bottom: 1.5rem;">
-          We specialize in custom laser-engraved compact pocket mirrors, leather lipstick case keychains, and velvet travel jewelry boxes. Every keepsake is laser-etched with delicate birth flowers and names by our New Hampshire craftsmen.
-        </p>
-
-        <!-- Direct Collection Navigation Hub -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0;">
-          <a href="/pages/pocket-mirrors" style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--bg-cream); border-radius: 16px; border: 1px solid var(--border-delicate); text-decoration: none; color: var(--primary-deep); font-weight: 600;">
-            <span style="font-size: 1.5rem;">🪞</span>
-            <span>LED Pocket Mirrors</span>
-          </a>
-          <a href="/pages/jewelry-boxes" style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--bg-cream); border-radius: 16px; border: 1px solid var(--border-delicate); text-decoration: none; color: var(--primary-deep); font-weight: 600;">
-            <span style="font-size: 1.5rem;">💍</span>
-            <span>Travel Jewelry Boxes</span>
-          </a>
-          <a href="/pages/our-story" style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--bg-cream); border-radius: 16px; border: 1px solid var(--border-delicate); text-decoration: none; color: var(--primary-deep); font-weight: 600;">
-            <span style="font-size: 1.5rem;">📖</span>
-            <span>Our Story &amp; Team</span>
-          </a>
-          <a href="/pages/reviews" style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--bg-cream); border-radius: 16px; border: 1px solid var(--border-delicate); text-decoration: none; color: var(--primary-deep); font-weight: 600;">
-            <span style="font-size: 1.5rem;">🌸</span>
-            <span>Customer Reviews</span>
-          </a>
-        </div>
-
-        <!-- Store Policies Card -->
-        <div style="background: var(--bg-petal); padding: 1.5rem; border-radius: 18px; border: 1px solid var(--border-delicate); margin: 2rem 0;">
-          <h4 style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 0.5rem;">💳 Store Policies</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
-            <strong>Accepted Payment Methods:</strong> PayPal, Visa, Mastercard, Apple Pay, and Gift Cards. Also accepts Etsy Gift Cards and Etsy Credits.
-          </p>
-          <p style="font-size: 0.9rem; margin: 0;">
-            <strong>Returns &amp; Exchanges:</strong> See item details for return and exchange eligibility.
-          </p>
-        </div>
-
-        <div style="text-align: center; margin-top: 2rem;">
-          <a href="/pages/contact" class="btn btn-primary" style="padding: 14px 32px;">
-            <span>Contact Us Now to Get Your Mirror</span>
-          </a>
-        </div>
-      {% endif %}
+      {{ page.content }}
     </div>
   </div>
 </section>

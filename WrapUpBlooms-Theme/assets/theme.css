@@ -1395,15 +1395,125 @@ img {
   }
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.3rem;
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE SYSTEM (Shopify Luxury Mobile Experience)
+   ========================================================================== */
+
+/* Global Mobile Viewport Guard */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
   }
+  .hero-subtitle {
+    margin: 0 auto 2rem;
+  }
+  .hero-cta-group {
+    justify-content: center;
+  }
+  .hero-stats-row {
+    justify-content: center;
+  }
+  .customizer-card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Container & Section Spacing */
+  .container {
+    padding: 0 1.15rem;
+  }
+
+  section,
+  .hero-section,
+  .reviews-section,
+  .who-we-are-offer-section,
+  .featured-collection-section,
+  .story-section,
+  .page-pocket-mirrors-section,
+  .page-jewelry-boxes-section,
+  .page-contact-section,
+  .page-reviews-section,
+  .page-404-section,
+  .main-cart-section {
+    padding: 2.75rem 0 !important;
+  }
+
+  /* Typography Scaling */
+  .section-title {
+    font-size: 1.85rem !important;
+    line-height: 1.22 !important;
+    margin-bottom: 0.65rem !important;
+  }
+  .section-header-center {
+    margin-bottom: 1.75rem !important;
+  }
+  .section-subtitle-pill {
+    font-size: 0.74rem !important;
+    padding: 5px 13px !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Header & Announcement Bar */
+  .announcement-bar {
+    padding: 5px 6px;
+    font-size: 0.72rem;
+  }
+  .announcement-bar .marquee-content {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    line-height: 1.35;
+  }
+  .announcement-bar .marquee-content > * {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .header-top-row {
+    padding: 0.35rem 0;
+    gap: 0.75rem;
+  }
+  .brand-logo-text {
+    font-size: 1.35rem;
+  }
+  .brand-logo-text .bloom-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .brand-tagline-sub {
+    display: none;
+  }
+  .header-top-actions {
+    gap: 8px;
+  }
+  .header-phone-pill {
+    padding: 4px 10px;
+    font-size: 0.74rem;
+  }
+  .action-icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Horizontal Swipe Navigation Bar */
   .header-nav-row {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 0.25rem 0.5rem;
+    padding: 0.35rem 0.25rem;
     justify-content: flex-start;
   }
   .header-nav-row::-webkit-scrollbar {
@@ -1411,30 +1521,227 @@ img {
   }
   .nav-menu {
     display: flex;
-    gap: 1.1rem;
-    padding: 0 0.25rem;
+    gap: 0.5rem;
+    padding: 0;
+    align-items: center;
   }
   .nav-link {
-    font-size: 0.8rem;
-    padding: 3px 6px;
+    font-size: 0.78rem;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(196, 123, 137, 0.18);
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  /* Hero Section Mobile Optimization */
+  .hero-section {
+    padding: 2.25rem 0 3rem !important;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hero-pill-badge {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+    margin-bottom: 1rem;
+  }
+  .hero-title {
+    font-size: 2.15rem;
+    line-height: 1.18;
+    margin-bottom: 1rem;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 auto 1.5rem;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 1.75rem;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 0.88rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-stats-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    width: 100%;
+  }
+  .stat-item h4 {
+    font-size: 1.35rem;
+    margin-bottom: 2px;
+  }
+  .stat-item p {
+    font-size: 0.7rem;
+    line-height: 1.25;
+  }
+  .hero-visual-card {
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+  .hero-floating-floater {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 12px !important;
+    width: 90% !important;
+    max-width: 320px !important;
+    padding: 10px 14px !important;
+  }
+
+  /* Compact Floating Pills for Blooms & Music */
+  .music-toggle-btn {
+    bottom: 56px;
+    left: 14px;
+    padding: 6px 12px;
+    font-size: 0.74rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  }
+  .petals-toggle-btn {
+    bottom: 16px;
+    left: 14px;
+    padding: 6px 12px;
+    font-size: 0.74rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Inline Grids Collapsed to 1 Column */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: 1.2fr 0.8fr"],
+  [style*="grid-template-columns: 280px 1fr"],
+  [style*="minmax(260px"],
+  [style*="minmax(280px"],
+  [style*="minmax(300px"],
+  [style*="minmax(320px"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .water-wave-divider {
+    margin-top: 1.5rem !important;
+  }
+
+  .story-section [style*="border-top: 1px solid var(--border-delicate)"] {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1rem !important;
+  }
+  .story-section [style*="border-top: 1px solid var(--border-delicate)"] .btn {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Inner White & Cream Card Padding Overrides */
+  [style*="padding: 3rem"],
+  [style*="padding: 2.5rem"],
+  [style*="padding: 2rem"] {
+    padding: 1.35rem !important;
+    border-radius: 20px !important;
+  }
+
+  /* Featured Collection / Product Grid */
+  .product-grid-target {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  .product-card {
+    padding: 14px;
+    border-radius: 20px;
+  }
+  .product-title {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+  .collection-filter-tab {
+    padding: 7px 12px;
+    font-size: 0.78rem;
+  }
+
+  /* Reviews & Testimonials */
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .review-card {
+    padding: 1.35rem !important;
+    border-radius: 20px;
+  }
+  .review-text {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  .newsletter-input-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .newsletter-input {
+    width: 100%;
+  }
+  .newsletter-input-group .btn {
+    width: 100%;
+  }
+
+  /* Cart Drawer Full-Width on Mobile */
+  .cart-drawer {
+    max-width: 100% !important;
+    width: 100% !important;
+    right: -100%;
+  }
+  .cart-drawer.active {
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.85rem;
+  }
+  .hero-title {
+    font-size: 1.85rem;
   }
   .brand-logo-text {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
-  .brand-tagline-sub {
+  .header-phone-pill span:last-child {
     display: none;
   }
   .header-phone-pill {
-    padding: 4px 10px;
-    font-size: 0.74rem;
+    padding: 5px 8px;
   }
-  .reviews-grid {
-    grid-template-columns: 1fr;
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.85rem;
   }
-  .flower-chips-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .stat-item h4 {
+    font-size: 1.2rem;
   }
-  .footer-grid {
-    grid-template-columns: 1fr;
+  .stat-item p {
+    font-size: 0.68rem;
   }
 }
+

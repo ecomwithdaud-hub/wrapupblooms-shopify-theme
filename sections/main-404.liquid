@@ -1,0 +1,110 @@
+<section class="page-404-section" style="padding: 6rem 0; background: var(--bg-cream); text-align: center;">
+  <div class="container" style="max-width: 860px;">
+    <span class="section-subtitle-pill">🌸 In Full Bloom</span>
+    <h1 class="section-title" style="font-size: 3.2rem; margin-bottom: 1rem;">
+      Looking for Something Special?
+    </h1>
+    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.5rem;">
+      We couldn't find that exact page, but our handcrafted personalized keepsakes are ready for you. Choose a boutique collection below or speak directly with Saddam &amp; Naina at <strong>(978) 233-8050</strong>.
+    </p>
+
+    <!-- Quick Navigation Hub -->
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 3.5rem;">
+      <a href="/" class="btn btn-primary" style="padding: 14px 28px;">
+        <span>🏠 Return to Homepage</span>
+      </a>
+      <a href="/pages/pocket-mirrors" class="btn btn-secondary" style="padding: 14px 28px;">
+        <span>🪞 LED Pocket Mirrors</span>
+      </a>
+      <a href="/pages/jewelry-boxes" class="btn btn-secondary" style="padding: 14px 28px;">
+        <span>💍 Jewelry Cases</span>
+      </a>
+      <a href="/pages/our-story" class="btn btn-secondary" style="padding: 14px 28px;">
+        <span>📖 Our Story</span>
+      </a>
+      <a href="/pages/reviews" class="btn btn-secondary" style="padding: 14px 28px;">
+        <span>🌸 Reviews</span>
+      </a>
+      <a href="/pages/contact" class="btn btn-primary" style="padding: 14px 28px;">
+        <span>📞 Contact Us: (978) 233-8050</span>
+      </a>
+    </div>
+
+    <!-- Featured 4 Keepsakes Grid -->
+    <div style="background: #FFF; border-radius: 32px; padding: 3rem 2rem; border: 1.5px solid var(--border-delicate); box-shadow: var(--shadow-hover); text-align: left;">
+      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--primary-deep); margin-bottom: 1.5rem; text-align: center;">
+        🌸 Popular Keepsakes You May Love
+      </h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+        
+        <div class="product-card" style="margin: 0;">
+          <div class="product-card-media">
+            <a href="/#featured-collection">
+              <img src="{{ 'bespoke-lipstick-keychain.jpg' | asset_url }}" alt="Personalized Leather Lipstick Case Keychain" width="400" height="400" onerror="this.src='{{ 'product-lipstick-case.jpg' | asset_url }}'">
+            </a>
+          </div>
+          <h4 class="product-title" style="font-size: 0.95rem;">
+            <a href="/#featured-collection">Leather Lipstick Case Keychain</a>
+          </h4>
+          <div class="product-price-row">
+            <span class="current-price">$24.00</span>
+            <a href="/pages/contact" class="btn-quick-add" style="font-size: 0.75rem; padding: 6px 12px;">Personalize</a>
+          </div>
+        </div>
+
+        <div class="product-card" style="margin: 0;">
+          <div class="product-card-media">
+            <a href="/pages/pocket-mirrors">
+              <img src="{{ 'bespoke-compact-mirror.jpg' | asset_url }}" alt="Custom Engraved LED Pocket Makeup Mirror" width="400" height="400" onerror="this.src='{{ 'product-compact-mirror.jpg' | asset_url }}'">
+            </a>
+          </div>
+          <h4 class="product-title" style="font-size: 0.95rem;">
+            <a href="/pages/pocket-mirrors">LED Pocket Compact Mirror</a>
+          </h4>
+          <div class="product-price-row">
+            <span class="current-price">$28.50</span>
+            <a href="/pages/pocket-mirrors" class="btn-quick-add" style="font-size: 0.75rem; padding: 6px 12px;">Personalize</a>
+          </div>
+        </div>
+
+        <div class="product-card" style="margin: 0;">
+          <div class="product-card-media">
+            <a href="/pages/jewelry-boxes">
+              <img src="{{ 'product-jewelry-box.jpg' | asset_url }}" alt="Personalized Wildflower Velvet Travel Jewelry Box" width="400" height="400">
+            </a>
+          </div>
+          <h4 class="product-title" style="font-size: 0.95rem;">
+            <a href="/pages/jewelry-boxes">Velvet Travel Jewelry Box</a>
+          </h4>
+          <div class="product-price-row">
+            <span class="current-price">$32.00</span>
+            <a href="/pages/jewelry-boxes" class="btn-quick-add" style="font-size: 0.75rem; padding: 6px 12px;">Personalize</a>
+          </div>
+        </div>
+
+        <div class="product-card" style="margin: 0;">
+          <div class="product-card-media">
+            <a href="/#featured-collection">
+              <img src="{{ 'product-bear-puzzle.jpg' | asset_url }}" alt="Handcrafted Wooden Bear Family Keepsake Puzzle" width="400" height="400">
+            </a>
+          </div>
+          <h4 class="product-title" style="font-size: 0.95rem;">
+            <a href="/#featured-collection">Wooden Bear Family Puzzle</a>
+          </h4>
+          <div class="product-price-row">
+            <span class="current-price">$39.00</span>
+            <a href="/pages/contact" class="btn-quick-add" style="font-size: 0.75rem; padding: 6px 12px;">Personalize</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "404 Page",
+  "settings": []
+}
+{% endschema %}

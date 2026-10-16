@@ -49,7 +49,16 @@
 
     <!-- Main Page Content -->
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {{ content_for_layout }}
+      {% if request.path == '/' or template.name == 'index' %}
+        {% section 'hero-banner' %}
+        {% section 'who-we-are-offer' %}
+        {% section 'featured-collection' %}
+        {% section 'testimonials-slider' %}
+        {% section 'rich-text-story' %}
+        <div style="display:none !important;">{{ content_for_layout }}</div>
+      {% else %}
+        {{ content_for_layout }}
+      {% endif %}
     </main>
 
     <!-- Slide-out AJAX Cart Drawer -->

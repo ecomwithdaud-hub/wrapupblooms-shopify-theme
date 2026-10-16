@@ -1,7 +1,7 @@
 /**
  * WrapUpBlooms - Romantic Floral Background Melodies Controller
- * Plays calming royalty-free acoustic guitar & piano music across pages.
- * Handles browser autoplay policies, volume fade-in, and cross-page state persistence.
+ * Plays calming royalty-free acoustic guitar & piano music automatically on open.
+ * Always ON by default; allows visitors to mute/turn off anytime.
  */
 (function() {
   'use strict';
@@ -15,7 +15,7 @@
     const toggleBtn = document.getElementById('toggle-music');
     if (!audio || !toggleBtn) return;
 
-    // Check saved muted preference (default: unmuted)
+    // Default is ALWAYS unmuted unless visitor explicitly clicked OFF in this session
     let isMuted = sessionStorage.getItem(STORAGE_KEY_MUTED) === 'true';
 
     // Restore playback time from previous page if available
@@ -26,35 +26,41 @@
       } catch (e) {}
     }
 
-    // Set UI state: 'playing' | 'waiting' | 'muted'
-    function setUIState(state) {
-      toggleBtn.classList.remove('is-muted', 'is-waiting');
-      if (state === 'muted') {
+    function updateBtnUI(muted) {
+      if (muted) {
         toggleBtn.classList.add('is-muted');
+        toggleBtn.classList.remove('is-waiting');
         toggleBtn.innerHTML = '<span class="music-dot"></span> 🔇 Music: OFF';
-        toggleBtn.setAttribute('aria-label', 'Turn boutique background music on');
-      } else if (state === 'playing') {
-        toggleBtn.innerHTML = '<span class="music-dot"></span> 🎵 Music: ON';
-        toggleBtn.setAttribute('aria-label', 'Turn boutique background music off');
+        toggleBtn.setAttribute('aria-label', 'Turn background music on');
       } else {
-        // waiting for user gesture (browser autoplay policy)
-        toggleBtn.classList.add('is-waiting');
-        toggleBtn.innerHTML = '<span class="music-dot"></span> 🎵 Tap for Music';
-        toggleBtn.setAttribute('aria-label', 'Play boutique background music');
+        toggleBtn.classList.remove('is-muted', 'is-waiting');
+        toggleBtn.innerHTML = '<span class="music-dot"></span> 🎵 Music: ON';
+        toggleBtn.setAttribute('aria-label', 'Mute background music');
       }
     }
 
-    function playAudio() {
+    function startPlayback() {
+      if (isMuted) return;
       audio.volume = TARGET_VOLUME;
       const playPromise = audio.play();
       if (playPromise !== undefined) {
-        playPromise.then(function() {
-          setUIState('playing');
-        }).catch(function(err) {
-          // Still waiting for user gesture
-          if (!isMuted) {
-            setUIState('waiting');
+        playPromise.catch(function() {
+          // If browser policy delays sound until first touch/click,
+          // unlock silently the instant the visitor touches/scrolls the page
+          function silentUnlock() {
+            if (!isMuted && audio.paused) {
+              audio.volume = TARGET_VOLUME;
+              audio.play().catch(function() {});
+            }
+            ['pointerdown', 'touchstart', 'touchend', 'click', 'scroll', 'keydown'].forEach(function(evt) {
+              document.removeEventListener(evt, silentUnlock, true);
+              window.removeEventListener(evt, silentUnlock, true);
+            });
           }
+          ['pointerdown', 'touchstart', 'touchend', 'click', 'scroll', 'keydown'].forEach(function(evt) {
+            document.addEventListener(evt, silentUnlock, { capture: true, passive: true });
+            window.addEventListener(evt, silentUnlock, { capture: true, passive: true });
+          });
         });
       }
     }
@@ -72,63 +78,28 @@
       }
     });
 
-    // Native audio event sync
-    audio.addEventListener('play', function() {
-      setUIState('playing');
-    });
-
-    audio.addEventListener('pause', function() {
-      if (isMuted) {
-        setUIState('muted');
-      } else {
-        setUIState('waiting');
-      }
-    });
-
-    // Toggle button handler
+    // Toggle button: Allows visitors to turn OFF / turn ON
     toggleBtn.addEventListener('click', function(e) {
       e.stopPropagation();
       if (audio.paused || isMuted) {
         isMuted = false;
         sessionStorage.setItem(STORAGE_KEY_MUTED, 'false');
-        playAudio();
+        updateBtnUI(false);
+        audio.volume = TARGET_VOLUME;
+        audio.play().catch(function() {});
       } else {
         isMuted = true;
         sessionStorage.setItem(STORAGE_KEY_MUTED, 'true');
         audio.pause();
-        setUIState('muted');
+        updateBtnUI(true);
       }
     });
 
-    // Universal first interaction unlock (tap/click anywhere on page)
-    const unlockEvents = ['click', 'touchstart', 'touchend', 'pointerdown', 'keydown'];
-    function handleFirstInteraction() {
-      if (!isMuted && audio.paused) {
-        playAudio();
-      }
-      unlockEvents.forEach(function(evt) {
-        document.removeEventListener(evt, handleFirstInteraction, true);
-      });
-    }
+    // Initial state: ALWAYS ON by default
+    updateBtnUI(isMuted);
 
-    if (isMuted) {
-      setUIState('muted');
-    } else {
-      // Attempt immediate autoplay
-      audio.volume = TARGET_VOLUME;
-      const startPromise = audio.play();
-      if (startPromise !== undefined) {
-        startPromise.then(function() {
-          setUIState('playing');
-        }).catch(function() {
-          // Autoplay blocked by browser policy: set UI to waiting invite
-          setUIState('waiting');
-          // Unlock on any first user gesture anywhere on the page
-          unlockEvents.forEach(function(evt) {
-            document.addEventListener(evt, handleFirstInteraction, { capture: true, passive: true });
-          });
-        });
-      }
+    if (!isMuted) {
+      startPlayback();
     }
   }
 

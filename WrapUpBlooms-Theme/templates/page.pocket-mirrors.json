@@ -1,9 +1,0 @@
-{
-  "sections": {
-    "main": {
-      "type": "main-pocket-mirrors",
-      "settings": {}
-    }
-  },
-  "order": ["main"]
-}

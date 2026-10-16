@@ -1,9 +1,0 @@
-{
-  "sections": {
-    "main": {
-      "type": "main-jewelry-boxes",
-      "settings": {}
-    }
-  },
-  "order": ["main"]
-}

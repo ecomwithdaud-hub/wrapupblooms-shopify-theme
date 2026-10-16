@@ -162,6 +162,52 @@ img {
   50% { transform: scale(1.4); opacity: 1; }
 }
 
+.music-toggle-btn {
+  position: fixed;
+  bottom: 68px;
+  left: 24px;
+  background: var(--bg-card-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-delicate);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--primary-dark-rose);
+  cursor: pointer;
+  box-shadow: var(--shadow-glass);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 100;
+  transition: var(--transition-smooth);
+}
+
+.music-toggle-btn:hover {
+  transform: translateY(-2px);
+  background: #FFF;
+  box-shadow: var(--shadow-hover);
+}
+
+.music-toggle-btn .music-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  animation: pulseDot 2s infinite;
+}
+
+.music-toggle-btn.is-muted {
+  color: var(--text-muted);
+}
+
+.music-toggle-btn.is-muted .music-dot {
+  background: #9CA3AF;
+  animation: none;
+}
+
+
 /* Buttons & CTAs */
 .btn {
   display: inline-flex;

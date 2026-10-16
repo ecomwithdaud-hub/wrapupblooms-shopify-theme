@@ -43,6 +43,14 @@
       <span class="sparkle-dot"></span> Floating Blooms: ON
     </button>
 
+    <!-- Floating Melodies Acoustic Sound Control Pill -->
+    <button id="toggle-music" class="music-toggle-btn" aria-label="Toggle Boutique Melodies">
+      <span class="music-dot"></span> 🎵 Music: ON
+    </button>
+    <audio id="bg-music-player" loop preload="auto">
+      <source src="{{ 'boutique-melodies.mp3' | asset_url }}" type="audio/mpeg">
+    </audio>
+
     <!-- Header & Announcement -->
     {% section 'announcement-bar' %}
     {% section 'header' %}
@@ -71,5 +79,6 @@
     <script src="{{ 'floating-petals.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'water-ripple.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'bg-music.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>

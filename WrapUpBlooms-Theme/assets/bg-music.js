@@ -15,44 +15,46 @@
     const toggleBtn = document.getElementById('toggle-music');
     if (!audio || !toggleBtn) return;
 
-    // Check saved muted preference (default to unmuted)
+    // Check saved muted preference (default: unmuted)
     let isMuted = sessionStorage.getItem(STORAGE_KEY_MUTED) === 'true';
 
     // Restore playback time from previous page if available
     const savedTime = parseFloat(sessionStorage.getItem(STORAGE_KEY_TIME) || '0');
     if (!isNaN(savedTime) && savedTime > 0) {
-      audio.currentTime = savedTime;
+      try {
+        audio.currentTime = savedTime;
+      } catch (e) {}
     }
 
-    function updateBtnUI(muted) {
-      if (muted) {
+    // Set UI state: 'playing' | 'waiting' | 'muted'
+    function setUIState(state) {
+      toggleBtn.classList.remove('is-muted', 'is-waiting');
+      if (state === 'muted') {
         toggleBtn.classList.add('is-muted');
         toggleBtn.innerHTML = '<span class="music-dot"></span> 🔇 Music: OFF';
         toggleBtn.setAttribute('aria-label', 'Turn boutique background music on');
-      } else {
-        toggleBtn.classList.remove('is-muted');
+      } else if (state === 'playing') {
         toggleBtn.innerHTML = '<span class="music-dot"></span> 🎵 Music: ON';
         toggleBtn.setAttribute('aria-label', 'Turn boutique background music off');
+      } else {
+        // waiting for user gesture (browser autoplay policy)
+        toggleBtn.classList.add('is-waiting');
+        toggleBtn.innerHTML = '<span class="music-dot"></span> 🎵 Tap for Music';
+        toggleBtn.setAttribute('aria-label', 'Play boutique background music');
       }
     }
 
-    function fadeInAudio() {
-      audio.volume = 0;
+    function playAudio() {
+      audio.volume = TARGET_VOLUME;
       const playPromise = audio.play();
       if (playPromise !== undefined) {
         playPromise.then(function() {
-          let vol = 0;
-          const interval = setInterval(function() {
-            vol += 0.03;
-            if (vol >= TARGET_VOLUME) {
-              audio.volume = TARGET_VOLUME;
-              clearInterval(interval);
-            } else {
-              audio.volume = vol;
-            }
-          }, 60);
+          setUIState('playing');
         }).catch(function(err) {
-          // Browser autoplay restriction waiting for first user gesture
+          // Still waiting for user gesture
+          if (!isMuted) {
+            setUIState('waiting');
+          }
         });
       }
     }
@@ -70,43 +72,60 @@
       }
     });
 
+    // Native audio event sync
+    audio.addEventListener('play', function() {
+      setUIState('playing');
+    });
+
+    audio.addEventListener('pause', function() {
+      if (isMuted) {
+        setUIState('muted');
+      } else {
+        setUIState('waiting');
+      }
+    });
+
     // Toggle button handler
     toggleBtn.addEventListener('click', function(e) {
       e.stopPropagation();
       if (audio.paused || isMuted) {
         isMuted = false;
         sessionStorage.setItem(STORAGE_KEY_MUTED, 'false');
-        updateBtnUI(false);
-        fadeInAudio();
+        playAudio();
       } else {
         isMuted = true;
         sessionStorage.setItem(STORAGE_KEY_MUTED, 'true');
         audio.pause();
-        updateBtnUI(true);
+        setUIState('muted');
       }
     });
 
-    // Set initial UI
-    updateBtnUI(isMuted);
+    // Universal first interaction unlock (tap/click anywhere on page)
+    const unlockEvents = ['click', 'touchstart', 'touchend', 'pointerdown', 'keydown'];
+    function handleFirstInteraction() {
+      if (!isMuted && audio.paused) {
+        playAudio();
+      }
+      unlockEvents.forEach(function(evt) {
+        document.removeEventListener(evt, handleFirstInteraction, true);
+      });
+    }
 
-    if (!isMuted) {
-      // Attempt autoplay
+    if (isMuted) {
+      setUIState('muted');
+    } else {
+      // Attempt immediate autoplay
+      audio.volume = TARGET_VOLUME;
       const startPromise = audio.play();
       if (startPromise !== undefined) {
         startPromise.then(function() {
-          audio.volume = TARGET_VOLUME;
+          setUIState('playing');
         }).catch(function() {
-          // Autoplay policy prevented immediate playback; start on first interaction anywhere
-          function unlockOnInteraction() {
-            if (!isMuted && audio.paused) {
-              fadeInAudio();
-            }
-            ['click', 'touchstart', 'scroll', 'keydown'].forEach(function(evt) {
-              window.removeEventListener(evt, unlockOnInteraction);
-            });
-          }
-          ['click', 'touchstart', 'scroll', 'keydown'].forEach(function(evt) {
-            window.addEventListener(evt, unlockOnInteraction, { passive: true });
+          // Autoplay blocked by browser policy: set UI to waiting invite
+          setUIState('waiting');
+          // Unlock on any first user gesture anywhere on the page
+          unlockEvents.forEach(function(evt) {
+            document.addEventListener(evt, handleFirstInteraction, { capture: true, passive: true });
           });
         });
       }

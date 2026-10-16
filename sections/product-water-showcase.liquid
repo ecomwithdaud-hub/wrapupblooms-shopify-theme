@@ -1,0 +1,108 @@
+<section class="water-showcase-section" id="water-showcase">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="section-subtitle-pill">Interactive Live Customizer</span>
+      <h2 class="section-title">Design Her Personalized Keepsake</h2>
+      <p>Watch your personalization come alive in real-time. Type a name and choose a birth month flower to engrave on our signature leather lipstick case keychain with built-in mirror.</p>
+    </div>
+
+    <div class="customizer-card">
+      <!-- Live Preview Area -->
+      <div class="customizer-preview-box">
+        <img src="{{ 'bespoke-lipstick-keychain.jpg' | asset_url }}" alt="Custom Lipstick Case" class="preview-product-img" onerror="this.src='{{ 'product-lipstick-case.jpg' | asset_url }}'">
+        
+        <div class="live-engrave-overlay floating-badge">
+          <div class="live-engrave-name" id="live-engrave-name-display">Sophia</div>
+          <div class="live-engrave-flower" id="live-engrave-flower-display">Rose • June Bloom</div>
+        </div>
+      </div>
+
+      <!-- Live Controls -->
+      <div class="customizer-controls">
+        <div class="control-group">
+          <label class="control-label" for="customizer-name-input">
+            1. Enter Name / Custom Text (Max 15 Characters)
+          </label>
+          <input 
+            type="text" 
+            id="customizer-name-input" 
+            class="input-engrave-text" 
+            placeholder="e.g. Sophia, Bridesmaid, Mama" 
+            maxlength="15" 
+            value="Sophia"
+          >
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">
+            2. Choose Birth Month Flower
+          </label>
+          <div class="flower-chips-grid">
+            <button type="button" class="flower-chip" data-flower="Carnation" data-month="Jan">🌸 Jan (Carnation)</button>
+            <button type="button" class="flower-chip" data-flower="Violet" data-month="Feb">💜 Feb (Violet)</button>
+            <button type="button" class="flower-chip" data-flower="Daffodil" data-month="Mar">🌼 Mar (Daffodil)</button>
+            <button type="button" class="flower-chip" data-flower="Daisy" data-month="Apr">🤍 Apr (Daisy)</button>
+            <button type="button" class="flower-chip" data-flower="Lily" data-month="May">🌿 May (Lily)</button>
+            <button type="button" class="flower-chip active" data-flower="Rose" data-month="Jun">🌹 Jun (Rose)</button>
+            <button type="button" class="flower-chip" data-flower="Water Lily" data-month="Jul">🪷 Jul (Water Lily)</button>
+            <button type="button" class="flower-chip" data-flower="Poppy" data-month="Aug">🌺 Aug (Poppy)</button>
+            <button type="button" class="flower-chip" data-flower="Morning Glory" data-month="Sep">🌸 Sep (Glory)</button>
+            <button type="button" class="flower-chip" data-flower="Marigold" data-month="Oct">🌻 Oct (Marigold)</button>
+            <button type="button" class="flower-chip" data-flower="Peony" data-month="Nov">🏵️ Nov (Peony)</button>
+            <button type="button" class="flower-chip" data-flower="Holly" data-month="Dec">❄️ Dec (Holly)</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">
+            3. Select Vegan Leather Shade
+          </label>
+          <div style="display: flex; gap: 12px;">
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; cursor: pointer;">
+              <input type="radio" name="leather-color" checked style="accent-color: var(--primary-rose);">
+              Blush Rose
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; cursor: pointer;">
+              <input type="radio" name="leather-color" style="accent-color: var(--primary-rose);">
+              Cream Latte
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; cursor: pointer;">
+              <input type="radio" name="leather-color" style="accent-color: var(--primary-rose);">
+              Sage Mist
+            </label>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <button type="button" id="customizer-add-btn" class="btn btn-primary" style="width: 100%;">
+            <span>Add Custom Engraving to Cart &mdash; $24.00</span>
+          </button>
+          <p style="font-size: 0.78rem; text-align: center; margin-top: 8px; color: var(--text-muted);">
+            ✨ Hand-inspected before packaging &bull; Ships in 1-2 business days
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inverted Wave Divider -->
+  <div class="water-wave-divider water-wave-animated inverted" style="margin-top: 4rem;">
+    <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
+      <path d="M0,32L48,42.7C96,53,192,75,288,80C384,85,480,75,576,58.7C672,43,768,21,864,21.3C960,21,1056,43,1152,53.3C1248,64,1344,64,1392,64L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="#FFF0F5"></path>
+    </svg>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Live Water Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Design Her Personalized Keepsake"
+    }
+  ]
+}
+{% endschema %}

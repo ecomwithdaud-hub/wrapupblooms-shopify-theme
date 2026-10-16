@@ -1,0 +1,91 @@
+<section class="hero-section hero-panoramic-section" id="hero-banner">
+  <div class="container">
+    
+    <!-- Hero Panoramic Showcase Card -->
+    <div class="hero-banner-showcase">
+      <!-- 1. The Panoramic Artwork Image (Clean, completely unobstructed, full beauty) -->
+      <div class="hero-artwork-frame">
+        <img 
+          src="{{ 'hero-wrapupbloom-banner.png' | asset_url }}" 
+          alt="WrapUpBloom - Where every gift blooms into a memory - Laser Engraved Personalized Handcrafted Gifts" 
+          class="hero-artwork-img"
+          width="1024"
+          height="256"
+          onerror="this.src='{{ 'hero-bespoke-banner.jpg' | asset_url }}'"
+        >
+      </div>
+
+      <!-- 2. Integrated Action & Social Proof Shelf (Unobstructed, elegant presentation) -->
+      <div class="hero-action-shelf">
+        
+        <p class="hero-shelf-subtitle">
+          {{ section.settings.subheading | default: 'Celebrate friendships, bridal parties, and cherished moments with custom-engraved leather lipstick case keychains, LED compact mirrors, and delicate wildflower keepsakes.' }}
+        </p>
+
+        <!-- CTAs: Prominent, luxury styled -->
+        <div class="hero-shelf-cta-group">
+          <a href="/pages/contact" class="btn btn-primary hero-btn-main">
+            <span>Contact Us Now to Get Your Mirror</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#featured-collection" class="btn btn-secondary hero-btn-sub">
+            <span>Get Your Product</span>
+          </a>
+        </div>
+
+        <!-- Verified Reviews & Trust Metrics Strip -->
+        <div class="hero-shelf-trust-strip">
+          <div class="trust-pill">
+            <span class="trust-icon">🌸</span>
+            <span><strong>12,400+</strong> Happy Gifting Moments</span>
+          </div>
+          <div class="trust-pill highlight-gold">
+            <span class="trust-stars">★★★★★</span>
+            <span><strong>5.0 ★</strong> Etsy Verified Rating</span>
+          </div>
+          <div class="trust-pill">
+            <span class="trust-icon">✨</span>
+            <span><strong>100%</strong> US Laser Engraved & Custom</span>
+          </div>
+          <div class="trust-pill">
+            <span class="trust-icon">📞</span>
+            <span>Studio: <a href="tel:9782338050" style="color: inherit; text-decoration: underline;"><strong>(978) 233-8050</strong></a></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Smooth Undulating Water Wave Divider -->
+  <div class="water-wave-divider water-wave-animated" style="margin-top: 3.5rem;">
+    <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
+      <path d="M0,32L48,42.7C96,53,192,75,288,80C384,85,480,75,576,58.7C672,43,768,21,864,21.3C960,21,1056,43,1152,53.3C1248,64,1344,64,1392,64L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="#FFFFFF"></path>
+    </svg>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Celebrate friendships, bridal parties, and cherished moments with custom-engraved leather lipstick case keychains, LED compact mirrors, and delicate wildflower keepsakes."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Panoramic Banner"
+    }
+  ]
+}
+{% endschema %}

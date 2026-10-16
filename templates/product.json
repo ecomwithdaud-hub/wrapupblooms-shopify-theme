@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "water_showcase": {
+      "type": "product-water-showcase",
+      "settings": {
+        "title": "Interactive Live Customizer"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials-slider",
+      "settings": {
+        "title": "Customer Reviews"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "water_showcase",
+    "testimonials"
+  ]
+}

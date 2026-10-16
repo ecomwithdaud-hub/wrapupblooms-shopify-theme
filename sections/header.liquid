@@ -1,0 +1,106 @@
+<header class="site-header" role="banner">
+  <div class="container">
+    <!-- Row 1: Large Brand Logo & Top Actions (Phone, Search, Cart) -->
+    <div class="header-top-row">
+      <div class="header-brand">
+        <a href="/" class="brand-logo-text">
+          <span class="bloom-icon">{% render 'icon-flower' %}</span>
+          <span>WrapUpBlooms</span>
+        </a>
+        <span class="brand-tagline-sub">Personalized Floral Keepsakes & Gifts</span>
+      </div>
+
+      <div class="header-top-actions">
+        <!-- Prominent Phone Contact Pill -->
+        <a href="tel:9782338050" class="header-phone-pill" title="Call or Text WrapUpBlooms">
+          <span>📞</span>
+          <span>(978) 233-8050</span>
+        </a>
+
+        <button class="action-icon-btn" aria-label="Search" onclick="alert('Search WrapUpBlooms catalog');">
+          {% render 'icon-search' %}
+        </button>
+
+        <button class="action-icon-btn cart-trigger-btn" aria-label="View Cart">
+          {% render 'icon-cart' %}
+          <span class="cart-count-badge">2</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Row 2: Clean, Spacious Navigation Bar with Dropdown -->
+    <nav class="header-nav-row" role="navigation">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="/" class="nav-link">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/collections/all" class="nav-link">
+            <span>Shop Collections</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <!-- Dropdown Menu -->
+          <div class="nav-dropdown">
+            <a href="/collections/all" class="dropdown-item">
+              <span class="icon">🌸</span>
+              <span>All Personalized Gifts</span>
+            </a>
+            <a href="/collections/compact-mirrors" class="dropdown-item">
+              <span class="icon">🪞</span>
+              <span>Pocket & LED Mirrors</span>
+            </a>
+            <a href="/collections/jewelry-boxes" class="dropdown-item">
+              <span class="icon">💍</span>
+              <span>Jewelry & Keepsake Boxes</span>
+            </a>
+            <a href="/collections/lipstick-keychains" class="dropdown-item">
+              <span class="icon">💄</span>
+              <span>Lipstick Case Keychains</span>
+            </a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a href="/collections/compact-mirrors" class="nav-link">Pocket Mirrors</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/collections/jewelry-boxes" class="nav-link">Jewelry Boxes</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/pages/our-story" class="nav-link">Our Story</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/pages/reviews" class="nav-link">Reviews</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/pages/contact" class="nav-link">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "shop_title",
+      "label": "Shop Title",
+      "default": "WrapUpBlooms"
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Contact Phone",
+      "default": "(978) 233-8050"
+    }
+  ]
+}
+{% endschema %}

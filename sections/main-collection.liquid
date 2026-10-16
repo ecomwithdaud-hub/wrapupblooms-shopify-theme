@@ -1,0 +1,26 @@
+<section class="main-collection-section" style="padding: 5rem 0; background: var(--bg-cream);">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="section-subtitle-pill">Boutique Collection</span>
+      <h1 class="section-title">{{ collection.title | default: 'Personalized Keepsakes & Gifts' }}</h1>
+      <p>{{ collection.description | default: 'Explore our complete catalog of laser-engraved compact mirrors, lipstick keychains, velvet jewelry organizers, and bridal party sets.' }}</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;">
+      {% for product in collection.products %}
+        {% render 'product-card', product: product %}
+      {% else %}
+        {% for i in (1..6) %}
+          {% render 'product-card' %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Collection",
+  "settings": []
+}
+{% endschema %}

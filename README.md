@@ -92,11 +92,17 @@ Each of the following pages has been built as a separate, rich, heavy-content ex
 
 ## 🚀 How to Launch on Shopify (5-Minute Migration)
 
-### Step 1: Upload the Custom Theme
+### Method 1: Connect from GitHub (Recommended - Real-time Sync)
 1. In your Shopify Admin, navigate to **Online Store** &rarr; **Themes**.
-2. Under *Theme library*, click **Add theme** &rarr; **Upload zip file**.
-3. Select `WrapUpBlooms-Shopify-Theme.zip` and click **Upload file**.
-4. Once uploaded, click **Actions** &rarr; **Publish** (or **Customize**).
+2. Under *Theme library*, click **Add theme** &rarr; **Connect from GitHub**.
+3. Select your GitHub account (`ecomwithdaud-hub`), select repository `wrapupblooms-shopify-theme`, and select branch `main`.
+4. Click **Connect**. Shopify will instantly validate and link your theme directly from the root directories (`assets/`, `config/`, `layout/`, `locales/`, `sections/`, `snippets/`, `templates/`).
+5. Click **Publish** (or **Customize**).
+
+### Method 2: Upload the Custom Theme ZIP
+1. Under *Theme library*, click **Add theme** &rarr; **Upload zip file**.
+2. Select `WrapUpBlooms-Shopify-Theme.zip` and click **Upload file**.
+3. Once uploaded, click **Actions** &rarr; **Publish** (or **Customize**).
 
 ### Step 2: Import the Product Catalog
 1. In your Shopify Admin, navigate to **Products**.

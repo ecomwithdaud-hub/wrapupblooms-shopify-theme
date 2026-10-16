@@ -1,0 +1,113 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3 class="footer-brand-title">WrapUpBlooms</h3>
+        <p class="footer-desc">
+          Handcrafted personalized gifts for women, bridesmaids, and cherished family keepsakes. Made with love, laser precision, and botanical inspiration.
+        </p>
+        <div style="font-size: 0.9rem; color: #FFF; margin-bottom: 0.75rem;">
+          📞 <strong>Direct Contact / Phone:</strong> <a href="tel:9782338050" style="color: var(--accent-blush); text-decoration: underline;">(978) 233-8050</a>
+        </div>
+        <div style="font-size: 0.85rem; color: #D6BDC4;">
+          ✨ Over 12,000+ 5-Star Reviews &bull; Free Gift Packaging Available
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Collections</h4>
+        <ul class="footer-links">
+          <li><a href="/collections/all">All Personalized Gifts</a></li>
+          <li><a href="/collections/lipstick-keychains">Lipstick Case Keychains</a></li>
+          <li><a href="/collections/compact-mirrors">LED Pocket Mirrors</a></li>
+          <li><a href="/collections/jewelry-boxes">Travel Jewelry Cases</a></li>
+          <li><a href="/collections/bridal-sets">Bridesmaid Gift Boxes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Customer Care & Contact</h4>
+        <ul class="footer-links">
+          <li><a href="/pages/our-story">About WrapUpBlooms</a></li>
+          <li><a href="tel:9782338050">📞 Call: (978) 233-8050</a></li>
+          <li><a href="#contact-section">Contact Us Now to Get Your Mirror</a></li>
+          <li><a href="/pages/shipping">Shipping & Production Times</a></li>
+          <li><a href="/pages/customization-guide">Birth Flower Chart</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Join the Bloom Club</h4>
+        <p style="font-size: 0.85rem; color: #D6BDC4; margin-bottom: 0.75rem;">
+          Enjoy 15% off your first personalized keepsake order, plus VIP access to new botanical designs.
+        </p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('🌸 Thank you for joining the WrapUpBlooms Club! Code BLOOM15 has been applied.');">
+          <div class="newsletter-input-group">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+            <button type="submit" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Join</button>
+          </div>
+        </form>
+        <div style="margin-top: 1.25rem;">
+          <a href="#contact-section" class="btn btn-secondary" style="width: 100%; font-size: 0.82rem; padding: 10px 16px;">
+            Contact Us Now to Get Your Mirror
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Store Policies Section -->
+    <div style="border-top: 1px solid rgba(255, 255, 255, 0.12); padding: 2rem 0; margin-bottom: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+      <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <h5 style="color: #FFF; font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+          💳 Accepted Payment Methods
+        </h5>
+        <p style="color: #D6BDC4; font-size: 0.85rem; line-height: 1.6;">
+          PayPal, Visa, Mastercard, Apple Pay, and Gift Cards. Also accepts Etsy Gift Cards and Etsy Credits.
+        </p>
+      </div>
+
+      <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <h5 style="color: #FFF; font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+          🔄 Returns & Exchanges
+        </h5>
+        <p style="color: #D6BDC4; font-size: 0.85rem; line-height: 1.6;">
+          See item details for return and exchange eligibility.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        &copy; {{ 'now' | date: '%Y' }} WrapUpBlooms. All rights reserved. Handcrafted with passion.
+      </div>
+      <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+        <span>📞 (978) 233-8050</span>
+        <span>&bull;</span>
+        <span>🔒 256-Bit SSL Encrypted Checkout</span>
+        <span>&bull;</span>
+        <span>🌸 Handcrafted in Small Batches</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "WrapUpBlooms. All rights reserved."
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Phone Number",
+      "default": "(978) 233-8050"
+    }
+  ]
+}
+{% endschema %}

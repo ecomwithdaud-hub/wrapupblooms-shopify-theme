@@ -1,0 +1,53 @@
+<section class="lookbook-section" style="padding: 5rem 0; background: #FFF; position: relative;">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="section-subtitle-pill">Social Gallery</span>
+      <h2 class="section-title">Follow the Blooms @WrapUpBlooms</h2>
+      <p>Tag us in your unboxing moments on Instagram & TikTok to be featured on our boutique gallery.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+      <div style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 1/1; box-shadow: var(--shadow-soft);">
+        <img src="{{ 'lookbook-1.jpg' | asset_url }}" alt="WrapUpBlooms Social 1" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
+        <div style="position: absolute; inset: 0; background: rgba(196, 123, 137, 0.4); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease; color: #FFF; font-weight: 600;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+          🌸 #WrapUpBlooms
+        </div>
+      </div>
+
+      <div style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 1/1; box-shadow: var(--shadow-soft);">
+        <img src="{{ 'lookbook-2.jpg' | asset_url }}" alt="WrapUpBlooms Social 2" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
+        <div style="position: absolute; inset: 0; background: rgba(196, 123, 137, 0.4); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease; color: #FFF; font-weight: 600;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+          ✨ #BridesmaidGifts
+        </div>
+      </div>
+
+      <div style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 1/1; box-shadow: var(--shadow-soft);">
+        <img src="{{ 'lookbook-3.jpg' | asset_url }}" alt="WrapUpBlooms Social 3" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
+        <div style="position: absolute; inset: 0; background: rgba(196, 123, 137, 0.4); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease; color: #FFF; font-weight: 600;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+          💄 #LipstickKeychain
+        </div>
+      </div>
+
+      <div style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 1/1; box-shadow: var(--shadow-soft);">
+        <img src="{{ 'lookbook-4.jpg' | asset_url }}" alt="WrapUpBlooms Social 4" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
+        <div style="position: absolute; inset: 0; background: rgba(196, 123, 137, 0.4); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease; color: #FFF; font-weight: 600;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+          🌿 #PersonalizedGifts
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Instagram Lookbook",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Follow the Blooms @WrapUpBlooms"
+    }
+  ]
+}
+{% endschema %}

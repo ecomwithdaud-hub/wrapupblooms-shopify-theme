@@ -1,0 +1,39 @@
+<div class="announcement-bar" role="region" aria-label="Announcement">
+  <div class="container">
+    <div class="marquee-content">
+      <span class="badge-pill">Special Offer</span>
+      <span>🌸 <strong>{{ section.settings.text_1 | default: 'Free Handcrafted Luxury Gift Box Packaging on orders over $50' }}</strong></span>
+      <span style="opacity: 0.5;">•</span>
+      <span>📞 <strong>Call/Text: <a href="tel:9782338050" style="text-decoration: underline; color: inherit;">(978) 233-8050</a></strong></span>
+      <span style="opacity: 0.5;">•</span>
+      <span>✨ <strong>{{ section.settings.text_2 | default: 'Use code BLOOM15 for 15% Off Your First Order' }}</strong></span>
+      <span class="badge-pill" style="background: rgba(255,255,255,0.8);">5.0 ★ Top Rated</span>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Announcement Text 1",
+      "default": "Free Handcrafted Luxury Gift Box Packaging on orders over $50"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Announcement Text 2",
+      "default": "Use code BLOOM15 for 15% Off Your First Order"
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Phone Number",
+      "default": "(978) 233-8050"
+    }
+  ]
+}
+{% endschema %}

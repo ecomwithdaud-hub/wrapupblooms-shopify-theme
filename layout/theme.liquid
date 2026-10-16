@@ -1,0 +1,69 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#FFF9F5">
+    <link rel="canonical" href="{{ canonical_url }}">
+    
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    <!-- Pink Flower Boutique Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ 'favicon.svg' | asset_url }}">
+    <link rel="alternate icon" type="image/png" href="{{ 'favicon.png' | asset_url }}">
+    <link rel="apple-touch-icon" href="{{ 'favicon.png' | asset_url }}">
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    <!-- Google Fonts: Playfair Display (Luxury Serif) & Plus Jakarta Sans (Clean Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Theme Stylesheet -->
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+    {{ content_for_header }}
+  </head>
+
+  <body class="template-{{ template.name }}">
+    <!-- Interactive Floating Rose & Cherry Blossom Petals Canvas -->
+    <canvas id="petals-canvas"></canvas>
+
+    <!-- Floating Blooms Motion Control Pill -->
+    <button id="toggle-petals" class="petals-toggle-btn" aria-label="Toggle Floating Blooms Animation">
+      <span class="sparkle-dot"></span> Floating Blooms: ON
+    </button>
+
+    <!-- Header & Announcement -->
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+
+    <!-- Main Page Content -->
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    <!-- Slide-out AJAX Cart Drawer -->
+    {% section 'cart-drawer' %}
+
+    <!-- Footer -->
+    {% section 'footer' %}
+
+    <!-- Floating Pinkish Concierge Chatbot ("Get Yours Now!") -->
+    {% render 'floating-chatbot' %}
+
+    <!-- Theme Interactive Scripts -->
+    <script src="{{ 'floating-petals.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'water-ripple.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  </body>
+</html>

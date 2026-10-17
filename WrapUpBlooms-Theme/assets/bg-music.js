@@ -39,27 +39,41 @@
       }
     }
 
+    const unlockEvents = ['click', 'pointerdown', 'touchstart', 'touchend', 'keydown'];
+
+    function removeUnlockListeners() {
+      unlockEvents.forEach(function(evt) {
+        document.removeEventListener(evt, handleFirstInteraction, true);
+        window.removeEventListener(evt, handleFirstInteraction, true);
+      });
+    }
+
+    function handleFirstInteraction() {
+      if (isMuted) return;
+      audio.volume = TARGET_VOLUME;
+      const p = audio.play();
+      if (p !== undefined) {
+        p.then(function() {
+          // Playback successfully started! Clean up listeners
+          removeUnlockListeners();
+        }).catch(function() {
+          // Not yet unlocked, keep listeners active
+        });
+      }
+    }
+
     function startPlayback() {
       if (isMuted) return;
       audio.volume = TARGET_VOLUME;
       const playPromise = audio.play();
       if (playPromise !== undefined) {
-        playPromise.catch(function() {
-          // If browser policy delays sound until first touch/click,
-          // unlock silently the instant the visitor touches/scrolls the page
-          function silentUnlock() {
-            if (!isMuted && audio.paused) {
-              audio.volume = TARGET_VOLUME;
-              audio.play().catch(function() {});
-            }
-            ['pointerdown', 'touchstart', 'touchend', 'click', 'scroll', 'keydown'].forEach(function(evt) {
-              document.removeEventListener(evt, silentUnlock, true);
-              window.removeEventListener(evt, silentUnlock, true);
-            });
-          }
-          ['pointerdown', 'touchstart', 'touchend', 'click', 'scroll', 'keydown'].forEach(function(evt) {
-            document.addEventListener(evt, silentUnlock, { capture: true, passive: true });
-            window.addEventListener(evt, silentUnlock, { capture: true, passive: true });
+        playPromise.then(function() {
+          // Immediate autoplay allowed by browser!
+        }).catch(function() {
+          // Browser requires user interaction: listen for any tap/click anywhere on page
+          unlockEvents.forEach(function(evt) {
+            document.addEventListener(evt, handleFirstInteraction, { capture: true, passive: true });
+            window.addEventListener(evt, handleFirstInteraction, { capture: true, passive: true });
           });
         });
       }
